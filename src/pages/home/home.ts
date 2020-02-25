@@ -11,11 +11,11 @@ import { GeoLocationPage } from '../geo-location/geo-location';
 })
 export class HomePage {
 
-  images = [{image: 'baby3.png', txt: 'Dee Dee'},
+  images = [{image: 'dbcolor1.jpg', txt: 'Dee Dee'},
             {image:'baby5.png', txt: 'Ae Ae'},
-            {image:'baby6.png',  txt: 'Barbie'},
-            {image:'baby3.png',  txt: 'Bee Bee'},
-            {image:'baby5.png',  txt: 'Dar Dar'},
+            {image:'lbcolor1.jpg',  txt: 'Barbie'},
+            {image:'lbcolor2.jpg',  txt: 'Bee Bee'},
+            {image:'dbcolor1.jpg',  txt: 'Dar Dar'},
             {image:'baby6.png', txt: 'Tuu Tuu'}]
 
   photos = [{image: 'girl1.png', txt: 'Ae Ae'},

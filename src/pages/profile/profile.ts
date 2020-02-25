@@ -29,9 +29,6 @@ export class ProfilePage {
     public platform: Platform,
     public sqlite: SQLite) { }
 
-
-
-
   actionHome() {
     let actionSheet = this.actionsheetCtrl.create({
 
@@ -39,7 +36,6 @@ export class ProfilePage {
       buttons: [
         {
           text: 'Save post',
-
           role: 'destructive',
           icon: !this.platform.is('ios') ? 'bookmark' : null,
           handler: () => {
@@ -178,10 +174,6 @@ export class ProfilePage {
     });
     actionSheet1.present();
   }
-
-  //private win: any = window; 
-
-
   goGallery() {
     console.log('Photo gallery');
     const options: CameraOptions = {
@@ -262,11 +254,8 @@ export class ProfilePage {
     console.log("namePaht == " + namePath + "   //// currentNmae == " + currentName + "   ////  newFileName == " + newFileName);
     console.log("this.file.datadirectory == " + this.file.dataDirectory);
     this.file.copyFile(namePath, currentName, this.file.dataDirectory, newFileName).then(success => {
-      // this.photos[0] = newFileName;
-      this.profile = this.pathForImage(newFileName);
-      //this.myProfile = this.webview.convertFileSrc(this.profile);
-      //this.myProfile = this.win.Ionic.WebView.convertFileSrc(this.profile);
-      // this.myProfile = window['Ionic']['WebView'].convertFileSrc(this.profile);
+     
+      this.profile = this.pathForImage(newFileName);    
       this.myProfile = normalizeURL(this.profile);
       //this.navCtrl.push(SaveProfilePage,{image:this.myProfile});
 
@@ -319,9 +308,7 @@ export class ProfilePage {
       db.executeSql('SELECT * FROM myphoto', {})
         .then(res => {
           this.mySavedPhotos = [];
-          for (var i = 0; i < res.rows.length; i++) {
-            // this.myimg = this.pathForImage(res.rows.item(i).img);
-            // this.myimage = normalizeURL(this.myimg)
+          for (var i = 0; i < res.rows.length; i++) {           
             this.mySavedPhotos.push({ imgid: res.rows.item(i).imgid, img: res.rows.item(i).img })
           }
         }).catch(e => console.log(e));

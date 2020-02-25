@@ -6,8 +6,7 @@ page-home {
         }                          
         .inputText{
             width: 100%;
-            font-size: medium;
-            color: rgb(216, 43, 43);           
+            font-size: medium;                  
             margin-left: -8px;
          }
          .btnText{
@@ -27,27 +26,27 @@ page-home {
             height: 150px;
             width: 90px;           
             border-radius: 20px;
-            object-fit: cover;           
+            object-fit: cover;    
+            //padding-left: -5px;       
         }
         .btnAdd{            
             position: absolute;            
             top: 6%;
             right: 45%;           
             padding: 1px 4px 1px 4px;            
-            background-color: white;           
+            //background-color: primary;           
             font-size: 15px;       
-            cursor: pointer;
+           // cursor: pointer;
             border-radius: 50%;
-            text-align: center;
-            border-color: red;           
-            border:0.19em solid #0f993d;            
+            text-align: center;                 
+            border:0.19em solid #03256C;            
         }
         .txtStory{
             position: absolute;
             bottom: 8px;           
             font-size: small;
             font-weight: bold;
-            color: black;            
+            color: white;            
             text-align: center;           
         }
         .storyBtn{  

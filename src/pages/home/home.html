@@ -1,5 +1,5 @@
 
-<ion-content id="home">
+<ion-content id="home" style="background-color: #d9d9d9;">
   <ion-card>
     <ion-row no-padding>
       <ion-col col-8>
@@ -16,37 +16,37 @@
         <ion-avatar item-start>
           <img src="assets/images/baby5.png" alt="">
         </ion-avatar>
-        <ion-input color="dark" class="inputText" placeholder="What's on your mind?"></ion-input>
+        <ion-input color="white" calass="inputText" placeholder="What's on your mind?"></ion-input>
       </ion-item>
     </ion-row>
     <hr>
     <ion-row>
       <ion-col no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon class="icon" style="color: red;" name="ios-videocam"></ion-icon>
+          <ion-icon class="icon" color="liveIcon" name="ios-videocam"></ion-icon>
           <span class="text-style">Live</span>
         </button>
       </ion-col>
       <div class="verticalLine"></div>
       <ion-col no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon class="icon" style="color: rgb(43, 233, 43);" name="ios-images"></ion-icon>
+          <ion-icon class="icon" color="photoIcon" name="ios-images"></ion-icon>
           <span class="text-style">Photo</span>
         </button>
       </ion-col>
       <div class="verticalLine"></div>
       <ion-col no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon class="icon" style="color: red;" name="ios-pin"></ion-icon>
+          <ion-icon class="icon" color="checkinIcon" name="ios-pin"></ion-icon>
           <span class="text-style">Check In</span>
         </button>
       </ion-col>
     </ion-row>
   </ion-card>
 
-  <ion-card style="padding-left: 2px;">
-    <ion-slides loop="true" slidesPerView="4">
-      <ion-slide style="padding-left: 3%;" *ngFor="let img of images">
+  <ion-card>
+    <ion-slides loop="true" slidesPerView="3">
+      <ion-slide style="padding-top: 5px; margin-right: -15px;margin-left: -15px;" *ngFor="let img of images">
         <button class="btnAdd">
           <ion-icon color="primary" name="md-add"></ion-icon>
         </button>
