@@ -1,0 +1,75 @@
+page-save-profile {
+
+
+.container {
+    position:relative;
+    
+    
+  }
+  
+   Bottom right text 
+  .text-block {
+   font-weight:bolder;
+    text-align:left;
+   // position: absolute;
+  // bottom: 5px;
+  // right: 20px;
+    background-color: white;
+    color: white;
+   padding-left: 10px;
+  padding-right: 10px;
+  
+  }  
+  .fishes
+{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.fish
+{
+  position: absolute;
+  
+//   top: 60px;
+//   left: 80px;
+  width:10em;
+  height:10em;
+  border-radius:50%;
+  top: 110px;
+right: 77px;
+z-index: 2;
+
+}
+.cam
+{position: absolute;
+ zoom:3em;
+ background-color: #d9d9d9;
+ right:10px;
+ top: 163px;
+ border-radius: 3px;
+}
+.photoBtn{
+  width: 30%;
+  float:left;
+  border-radius:20px;
+  margin-left:15px;
+  margin-top:10px;
+  background-color: #d9d9d9;
+  color:black;
+}
+.btn{
+  width:99%;
+  height:36px !important;
+  margin-top:20px;
+  
+  
+  border-radius: 7px;
+}
+.saveBtn{
+width: 50%;
+margin-left: 30px;
+background-color: white;
+color:black;
+
+}
+}

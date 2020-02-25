@@ -1,0 +1,195 @@
+
+<ion-content id="home">
+  <ion-card>
+    <ion-row no-padding>
+      <ion-col col-8>
+        <h1 ion-text color="primary">facebook</h1>      
+      </ion-col>      
+      <ion-col style="margin-right: -15px;">               
+          <ion-icon style="zoom: 1.3;" name="ios-search-outline" (click)="openSearch()"></ion-icon>      
+          <ion-icon style="zoom: 1.3;" name="ios-chatbubbles-outline"></ion-icon>     
+          <ion-icon style="zoom: 1.3;" name="ios-pin-outline" (click)="openBackgroundGeolocation()"></ion-icon>         
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin: -10px -10px 0px -5px;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/baby5.png" alt="">
+        </ion-avatar>
+        <ion-input color="dark" class="inputText" placeholder="What's on your mind?"></ion-input>
+      </ion-item>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon class="icon" style="color: red;" name="ios-videocam"></ion-icon>
+          <span class="text-style">Live</span>
+        </button>
+      </ion-col>
+      <div class="verticalLine"></div>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon class="icon" style="color: rgb(43, 233, 43);" name="ios-images"></ion-icon>
+          <span class="text-style">Photo</span>
+        </button>
+      </ion-col>
+      <div class="verticalLine"></div>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon class="icon" style="color: red;" name="ios-pin"></ion-icon>
+          <span class="text-style">Check In</span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card style="padding-left: 2px;">
+    <ion-slides loop="true" slidesPerView="4">
+      <ion-slide style="padding-left: 3%;" *ngFor="let img of images">
+        <button class="btnAdd">
+          <ion-icon color="primary" name="md-add"></ion-icon>
+        </button>
+        <img src="assets/images/{{img.image}}" class="photos"/>
+        <div class="txtStory">{{img.txt}}</div>
+      </ion-slide>
+    </ion-slides>
+    <button ion-button class="storyBtn" color="storyBtn" block>
+      <p ion-text color="primary" style="text-transform: none;font-size: medium;">See All Stories</p>
+    </button>
+  </ion-card>
+
+  <ion-card>
+    <ion-grid style="margin: -15px 0px -10px -10px;">     
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/baby7.png">
+        </ion-avatar>
+        <ion-row style="margin-left:-5px;">
+          <ion-col>
+            <h2 style="font-weight: bolder;" color= "dark">Khin Chan Myae Han</h2>
+          </ion-col>      
+          <ion-col col-2 style="margin-right: -20px; padding-right: -5px;">
+          
+              <ion-icon name="ios-more" (click)="openMenu()"></ion-icon>
+          
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -15px; margin-left:-6px">
+          <ion-col col-2>
+            <h6 ion-text color="darkgrey" style="font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon style="zoom: 0.7;" name="md-globe" color="darkgrey"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-card-content style="margin: -21px 0px -15px -5px;">
+      Hello, I am glad to meet you. You are the best for me.
+    </ion-card-content>
+    <ion-item-divider color='black'></ion-item-divider>
+      <ion-row style="padding-bottom: 5px;padding-top: 5px">
+        <ion-col text-center><ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Like</span></ion-col>
+        <ion-col text-center><ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span></ion-col>
+        <ion-col text-center><ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span></ion-col>
+      </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-slides loop="true" slidesPerView="2">
+      <ion-slide *ngFor="let p of photos" style="padding-left: 3%; right: 3%; width: 40%;">
+       
+          <img src="assets/images/{{p.image}}" class="requestImg"/>
+            <ion-card-content style="margin: -10px;">{{p.txt}}</ion-card-content>
+          <ion-grid>
+            <ion-row style="margin: -10px">
+              <ion-col>
+                <button style="font-size: small; margin-left: 5px; width: 90%;" ion-button block>
+                  <span style="text-transform: none;">
+                  Confirm </span>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button style="font-size: small; background-color:lightgrey; margin-right: 5px; width: 90%;" ion-button block>
+                  <span ion-text color="dark" style="text-transform: none">Delete</span></button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>      
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-card>
+    <ion-grid style="margin: -15px -10px -10px -10px;">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/images/baby5.png" alt="">
+      </ion-avatar>
+      <ion-row style="margin-left:-6px">
+        <ion-col>
+          <h2 color="dark" style="font-weight: bolder;">Khin Chan Myae Han </h2>
+        </ion-col>
+        <ion-col col-2 style="margin-right: -20px;">
+          
+            <ion-icon name="ios-more" (click)="openMenu()"></ion-icon>
+         
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: -18px;margin-left:-6px">
+        <ion-col col-2>
+          <h6 color="darkgrey" style="font-size:smaller;">2 min .</h6>
+        </ion-col>
+        <ion-col>
+          <ion-icon style="margin-left: -3px;zoom: 0.7; margin-top: 2px;" color= "darkgrey" name="md-globe"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-card-content>
+      Hello, I am glad to meet you. You are the best for me.
+    </ion-card-content>
+    </ion-grid>
+
+    <ion-card>
+      <ion-grid style="margin: -15px -10px 0px -10px;">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/images/baby6.png" alt="">
+          </ion-avatar>
+          <ion-row style="margin-left:-6px"> 
+            <ion-col>
+              <h2 style="font-weight: bolder;" color="dark">Khin Chan Myae Han</h2>
+            </ion-col>         
+          </ion-row>
+          <ion-row style="margin-top:-14px;margin-left:-6px">
+            <ion-col col-7>
+              <h6 style="font-size: smaller;" color= "darkgrey">Saturday at 10:33AM .</h6>
+            </ion-col>
+            <ion-col>
+              <ion-icon style="margin-left: -5px;zoom: 0.7; margin-top: 1px;" name="md-globe" color= "darkgrey"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-card-content>
+          This is share post. I want to try the best.
+          This is share post. I want to try the best.
+          This is share post. I want to try the best.
+          This is share post. I want to try the best.
+        </ion-card-content>
+      </ion-grid>
+    </ion-card>
+    <ion-item-divider color='black'></ion-item-divider>     
+        <ion-row style="padding-bottom: 5px;padding-top: 5px">
+          <ion-col text-center><ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Like</span></ion-col>
+          <ion-col text-center><ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span></ion-col>
+           <ion-col text-center><ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span></ion-col>
+        </ion-row>
+     
+   
+
+  </ion-card>
+
+
+
+</ion-content>

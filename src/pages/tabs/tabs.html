@@ -1,0 +1,9 @@
+
+<super-tabs id="mainTabs" selectedTabIndex="1" toolbarColor="light" toolbarBackground="light" indicatorColor="light" badgeColor="light" [config]="{ sideMenu: 'left' }" (tabSelect)="onTabSelect($event)">
+  <super-tab [root]="page1" icon="home" id="homeTab"></super-tab>
+  <super-tab [root]="page2" icon="contacts" id="groupTab"></super-tab>
+  <super-tab [root]="page3"  icon="logo-youtube" id="watchTab"></super-tab>
+  <super-tab [root]="page4" icon="contact" id="profileTab"></super-tab>
+  <super-tab [root]="page5"  icon="notifications" id="notificationTab"></super-tab>
+  <super-tab [root]="page6"  icon="menu" id="menuTab"></super-tab>
+</super-tabs>

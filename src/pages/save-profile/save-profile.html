@@ -1,0 +1,26 @@
+<ion-header  style="background-color:white;height:60px;width: 94.5%;margin-left:10px;">
+  <ion-grid>
+    <ion-row>
+    
+      <ion-col col-9 ><h6 text-center style="font-weight: bolder;margin-top:15px;margin-left: 60px;">&nbsp;Profile Picture</h6></ion-col>
+     
+      <ion-col col-3>
+      
+      
+      <button ion-button clear class="saveBtn"><h6 style="font-weight: bolder;text-transform: none;">Save</h6></button></ion-col>
+    </ion-row>
+    
+  </ion-grid>
+</ion-header>
+
+<ion-content style="background-color: #d9d9d9;">
+  <ion-card style="margin-top:-10px">
+
+  <ion-item>
+    <div style="position: relative; left: 0; top: 0;">
+      <img src="assets/imgs/scenery1.jpeg" class="fishes"/>
+      <img src="{{img}}" class="fish" (click)="uploadImg()" onError="this.src='assets/imgs/profile.png'"/>
+      <button  class="cam" (click)="coverPhoto()"><ion-icon name="camera" color="black"></ion-icon></button>
+     
+    </div><br><br><br><br><br></ion-item></ion-card></ion-content>
+    

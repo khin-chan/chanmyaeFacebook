@@ -1,0 +1,8 @@
+{
+  "name": "myFacebook",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

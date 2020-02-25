@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Location
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background">
+
+  <h3 style="color:white"> Latitude: {{locationTracker.lat}}</h3>
+  <h3 style="color: white"> Longitude: {{locationTracker.lng}}</h3>
+  <h3 style="color: white"> Speed: {{locationTracker.speed}}</h3>
+  <h3 style="color: white;"> TimeStamp: {{locationTracker.timestamp}}</h3>
+
+  <button ion-button primary (click)="start()">Start Tracking</button>
+  <button ion-button primary (click)="stop()">Stop Tracking</button>
+
+</ion-content>
