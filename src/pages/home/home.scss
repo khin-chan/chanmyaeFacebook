@@ -21,18 +21,29 @@ page-home {
             width:1px;
             height:25px;           
             background:rgb(212, 209, 209);           
-          }                  
+          }   
+        //  .mydayphoto{
+        //     padding-top: 5px; 
+        //     margin-right: -15px;
+        //     margin-left: -18px; 
+        //     // padding-left: 4%; 
+        //     // padding-right: 3%; 
+        //     // padding-top: 4%;
+        //     padding-left: 15px; 
+        //     padding-right: 15px; 
+        //     padding-top: 15px;
+        //  }         
          .photos{
             height: 150px;
-            width: 90px;           
+            width: 100%;           
             border-radius: 20px;
             object-fit: cover;    
             //padding-left: -5px;       
         }
         .btnAdd{            
             position: absolute;            
-            top: 6%;
-            right: 45%;           
+            top: 13%;
+            right: 50%;           
             padding: 1px 4px 1px 4px;            
             //background-color: primary;           
             font-size: 15px;       
@@ -66,8 +77,8 @@ page-home {
             align-items: center;
         }
         .requestImg{
-            height: 140px;
-            width: 100%;
+            height: 180px;
+            width: 100%;   
             //margin: 0.5px;
             object-fit: cover;
             
@@ -93,7 +104,7 @@ page-home {
 //         color:grey,
 //   }
       
-.text-style{
-        text-transform: none;color:grey
-  }
+// .text-style{
+//         text-transform: none;color:grey
+//   }
         

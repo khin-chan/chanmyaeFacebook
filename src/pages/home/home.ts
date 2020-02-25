@@ -26,10 +26,17 @@ export class HomePage {
             {image: 'girl6.png', txt: 'Moe Moe'} ]
 
   requests = ['Aye Aye', 'Mya Mya', 'Hla Hla', 'Khin Khin']
+
+  likeValue: number;
+  //dislikeValue: number;
+  likebtnColor: string = "darkgrey";
+  likeiconName: string = "ios-thumbs-up-outline";
+
   constructor(public platform: Platform,
     public navCtrl: NavController,
     public actionsheetCtrl: ActionSheetController) {
-
+      this.likeValue = 0;
+     // this.dislikeValue = 0;
   }
 
   openBackgroundGeolocation(){
@@ -109,6 +116,12 @@ export class HomePage {
       ]
     });
     actionSheet.present();
+  }
+  handleLike(){
+    console.log("Click Like");
+    this.likeValue++;
+    this.likebtnColor = "primary";
+    this.likeiconName = "md-thumbs-up";
   }
 
 }

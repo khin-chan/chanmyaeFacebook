@@ -1,7 +1,7 @@
 
 <ion-content id="home" style="background-color: #d9d9d9;">
   <ion-card>
-    <ion-row no-padding>
+    <ion-row>
       <ion-col col-8>
         <h1 ion-text color="primary">facebook</h1>      
       </ion-col>      
@@ -44,9 +44,9 @@
     </ion-row>
   </ion-card>
 
-  <ion-card>
+  <ion-card style="margin-top: -3px;">
     <ion-slides loop="true" slidesPerView="3">
-      <ion-slide style="padding-top: 5px; margin-right: -15px;margin-left: -15px;" *ngFor="let img of images">
+      <ion-slide style="padding-top: 2px; margin-right: -15px;margin-left: -18px; padding-left: 4%; padding-right: 3%; padding-top: 4%;" *ngFor="let img of images">
         <button class="btnAdd">
           <ion-icon color="primary" name="md-add"></ion-icon>
         </button>
@@ -59,7 +59,7 @@
     </button>
   </ion-card>
 
-  <ion-card>
+  <ion-card style="margin-top: -3px;">
     <ion-grid style="margin: -15px 0px -10px -10px;">     
       <ion-item>
         <ion-avatar item-start>
@@ -88,10 +88,18 @@
 
     <ion-card-content style="margin: -21px 0px -15px -5px;">
       Hello, I am glad to meet you. You are the best for me.
+      <ion-row *ngIf= "likeValue != 0" style="margin: 5px">
+        <ion-icon name="ios-thumbs-up-outline" color="primary"></ion-icon> {{likeValue}}
+      </ion-row>
     </ion-card-content>
     <ion-item-divider color='black'></ion-item-divider>
       <ion-row style="padding-bottom: 5px;padding-top: 5px">
-        <ion-col text-center><ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Like</span></ion-col>
+        <ion-col (click)="handleLike()" text-center><ion-icon name="{{likeiconName}}" color="{{likebtnColor}}" style="text-transform: none;">&nbsp;&nbsp;Like</ion-icon></ion-col>
+        <ion-col text-center><ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span></ion-col>
+        <ion-col text-center><ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span></ion-col>
+      </ion-row>
+      <ion-row style="padding-bottom: 5px;padding-top: 5px">
+        <ion-col text-center><ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span color="darkgrey">&nbsp;Like</span></ion-col>
         <ion-col text-center><ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span></ion-col>
         <ion-col text-center><ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span></ion-col>
       </ion-row>
@@ -99,8 +107,7 @@
 
   <ion-card>
     <ion-slides loop="true" slidesPerView="2">
-      <ion-slide *ngFor="let p of photos" style="padding-left: 3%; right: 3%; width: 40%;">
-       
+      <ion-slide *ngFor="let p of photos" style="padding-left: 3%;padding-top: 13px;padding-bottom: 10px;">       
           <img src="assets/images/{{p.image}}" class="requestImg"/>
             <ion-card-content style="margin: -10px;">{{p.txt}}</ion-card-content>
           <ion-grid>
@@ -121,7 +128,7 @@
     </ion-slides>
   </ion-card>
 
-  <ion-card>
+  <ion-card ion-card style="margin-top: -3px;">
     <ion-grid style="margin: -15px -10px -10px -10px;">
     <ion-item>
       <ion-avatar item-start>
