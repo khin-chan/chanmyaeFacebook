@@ -1,4 +1,3 @@
-
 <ion-content id="home" style="background-color: #d9d9d9;">
   <ion-card>
     <ion-row>
@@ -94,15 +93,10 @@
     </ion-card-content>
     <ion-item-divider color='black'></ion-item-divider>
       <ion-row style="padding-bottom: 5px;padding-top: 5px">
-        <ion-col (click)="handleLike()" text-center><ion-icon name="{{likeiconName}}" color="{{likebtnColor}}" style="text-transform: none;">&nbsp;&nbsp;Like</ion-icon></ion-col>
+        <ion-col (click)="handleLike()" text-center><ion-icon name="{{likeiconName}}" color="{{likebtnColor}}"></ion-icon><span ion-text color="{{likebtnColor}}">&nbsp;Like</span></ion-col>
         <ion-col text-center><ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span></ion-col>
         <ion-col text-center><ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span></ion-col>
-      </ion-row>
-      <ion-row style="padding-bottom: 5px;padding-top: 5px">
-        <ion-col text-center><ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span color="darkgrey">&nbsp;Like</span></ion-col>
-        <ion-col text-center><ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span></ion-col>
-        <ion-col text-center><ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span></ion-col>
-      </ion-row>
+      </ion-row>     
   </ion-card>
 
   <ion-card>
