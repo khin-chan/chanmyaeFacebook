@@ -27,6 +27,8 @@ export class HomePage {
 
   requests = ['Aye Aye', 'Mya Mya', 'Hla Hla', 'Khin Khin']
 
+  items = [{id: 1, like: true}]
+
   likeValue: number;
   //dislikeValue: number;
   likebtnColor: string = "darkgrey";
@@ -118,10 +120,18 @@ export class HomePage {
     actionSheet.present();
   }
   handleLike(){
-    console.log("Click Like");
-    this.likeValue++;
+    console.log("Click Like => ");   
+    this.likeValue=1;
     this.likebtnColor = "primary";
     this.likeiconName = "md-thumbs-up";
+    
+  }
+  handleLike2(item){
+    console.log("Click Like  2 => ");   
+    // this.likeValue=1;
+    // this.likebtnColor = "primary";
+    // this.likeiconName = "md-thumbs-up";
+    item.like = !item.like;
   }
 
 }
