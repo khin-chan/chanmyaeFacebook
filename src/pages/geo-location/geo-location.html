@@ -6,29 +6,37 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>  
-  <button ion-button class="trackBtn" style="background-color:rgb(43, 241, 59); margin-bottom: 12px;" block (click)="start()">
-    <h5 ion-text color="dark" style="text-transform: none;">Start Tracking</h5>
-  </button>
-  <button ion-button class="trackBtn" style="background-color:red; margin-bottom: 12px;" block (click)="stop()">
-    <h5 ion-text color="dark" style="text-transform: none;">Stop Tracking</h5>
-  </button>
+<ion-content>
 
- 
-    <ion-list>     
-        <ion-item-divider>      
-          <ion-label>Current Latitude: {{locationTracker.lat}}</ion-label>
-        </ion-item-divider>     
-        <ion-item-divider>  
-          <ion-label>Current Longitude: {{locationTracker.lng}}</ion-label>
-        </ion-item-divider>     
-        <ion-item-divider>  
-          <ion-label>Current Speed: {{locationTracker.speed}}</ion-label>
-        </ion-item-divider>  
-        <ion-item-divider>  
-          <ion-label style="height: 40px;">Current timestamp: <br>{{locationTracker.timestamp}}</ion-label>
-        </ion-item-divider>          
-      </ion-list>  
-     
 
-    </ion-content>
+
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>Current Latitude: {{locationTracker.lat}}</ion-label>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-label>Current Longitude: {{locationTracker.lng}}</ion-label>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-label>Current Speed: {{locationTracker.speed}}</ion-label>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-label style="height: 40px;">Current timestamp: <br>{{locationTracker.timestamp}}</ion-label>
+    </ion-item-divider>
+  </ion-list>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button class="trackBtn" color="fouth" style="margin-bottom: 12px;" block (click)="start()">
+        <h5 ion-text color="white" style="text-transform: none;">Start Tracking</h5>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button class="trackBtn" color="fouth" style="margin-bottom: 12px;" block (click)="stop()">
+        <h5 ion-text color="white" style="text-transform: none;">Stop Tracking</h5>
+      </button>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

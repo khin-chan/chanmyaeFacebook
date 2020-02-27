@@ -18,16 +18,16 @@ export class HomePage {
             {image:'dbcolor1.jpg',  txt: 'Dar Dar'},
             {image:'baby6.png', txt: 'Tuu Tuu'}]
 
-  photos = [{image: 'girl1.png', txt: 'Ae Ae'},
-            {image: 'girl2.png', txt: 'Su Su'},
-            {image: 'girl3.png', txt: 'Co Co'},
-            {image: 'girl4.png', txt: 'Chi Chi'},
-            {image: 'girl5.png', txt: 'Htet Het'},
-            {image: 'girl6.png', txt: 'Moe Moe'} ]
+  photos = [{image: 'girl4.png', txt: 'Ae Ae', subtxt: '3 mutual friends'},
+            {image: 'girl5.png', txt: 'Su Su', subtxt: '2 mutual friends'},
+            {image: 'girl6.png', txt: 'Co Co', subtxt: '1 mutual friend'},
+            {image: 'girl4.png', txt: 'Chi Chi', subtxt: '5 mutual friends'},
+            {image: 'girl5.png', txt: 'Htet Het', subtxt: '4 mutual friends'},
+            {image: 'girl6.png', txt: 'Moe Moe', subtxt: '1 mutual friend'} ]
 
   requests = ['Aye Aye', 'Mya Mya', 'Hla Hla', 'Khin Khin']
 
-  items = [{id: 1, like: true}]
+  items = [{id: 1, like: false}]
 
   likeValue: number;
   //dislikeValue: number;
