@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, ActionSheetController } from 'ionic-angular';
+import { NavController, Platform, ActionSheetController, Modal, ModalController, ModalOptions } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { GeoLocationPage } from '../geo-location/geo-location';
+import { CommentPage } from '../comment/comment';
 
 
  
@@ -27,11 +28,14 @@ export class HomePage {
 
   requests = ['Aye Aye', 'Mya Mya', 'Hla Hla', 'Khin Khin']
 
-  items = [{id: 1, like: false}]
+  items1 = [{id: 1, like: false}];
+  items2 = [{id: 1, like: false}];
+  items3 = [{id: 1, like: false}];
 
   constructor(public platform: Platform,
     public navCtrl: NavController,
-    public actionsheetCtrl: ActionSheetController) {
+    public actionsheetCtrl: ActionSheetController,
+    private modal: ModalController) {
       
   }
 
@@ -113,11 +117,46 @@ export class HomePage {
     });
     actionSheet.present();
   }
-  
-  handleLike(item){
-    console.log("Click Like   => ");   
+  openModal(){
+
+    const myModalOptions: ModalOptions = {
+      enableBackdropDismiss: false
+    };
+    const myData = {
+      name: 'Chan Myae Home',
+      role: 'Developer'
+    };
+    const myModal : Modal = this.modal.create(CommentPage, { data: myData}, myModalOptions);
+    myModal.present();
+
+    myModal.onDidDismiss((data)=>{
+      console.log("I'm about Dimissed");
+      console.log(data);
+    })
+
+    myModal.onWillDismiss((data) => {
+      console.log("I'm about to dismiss");
+      console.log(data);
+    })
+
+    console.log("My Comment Modal");
+  }
+  handleLike1(item){
+    console.log("Click Like  1=> ");   
     
     item.like = !item.like;
   }
+  handleLike2(item){
+    console.log("Click Like  2=> ");   
+    
+    item.like = !item.like;
+  }
+
+  handleLike3(item){
+    console.log("Click Like  3=> ");   
+    
+    item.like = !item.like;
+  }
+
 
 }

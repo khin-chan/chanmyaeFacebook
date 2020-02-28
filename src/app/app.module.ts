@@ -14,6 +14,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { NotificationPage } from '../pages/notification/notification';
 import { GeoLocationPage } from '../pages/geo-location/geo-location';
 import { SaveProfilePage } from '../pages/save-profile/save-profile';
+import { CommentPage } from '../pages/comment/comment';
+import { SaveCpPage } from '../pages/save-cp/save-cp';
+import { ShowUploadImgPage } from '../pages/show-upload-img/show-upload-img';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,8 +31,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
-import { Toast } from '@ionic-native/toast';
 import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { SQLite } from '@ionic-native/sqlite';
     QrcodePage,
     GeoLocationPage,
     SaveProfilePage,
+    CommentPage,
+    SaveCpPage,
+    ShowUploadImgPage,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +77,9 @@ import { SQLite } from '@ionic-native/sqlite';
     QrcodePage,
     GeoLocationPage,
     SaveProfilePage,
+    CommentPage,
+    SaveCpPage,
+    ShowUploadImgPage,
   ],
   providers: [
     StatusBar,
@@ -83,7 +92,7 @@ import { SQLite } from '@ionic-native/sqlite';
     Camera,
     File,
     SQLite,
-    SQLite
+    Toast,
   ]
 })
 export class AppModule {}

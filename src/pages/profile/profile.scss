@@ -45,6 +45,8 @@ page-profile {
      position: relative;
      top: 0;
      left: 0;
+     width:31em ;
+     height:12em;
    }
    .fish
    {
@@ -85,5 +87,13 @@ page-profile {
      
      border-radius: 7px;
    }
+   .resize {
+    height: 100px;
+    /* width: 100%; */
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+    border-radius: 50px;
+  }
    
 }

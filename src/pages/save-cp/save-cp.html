@@ -1,0 +1,42 @@
+<!--
+  Generated template for the SaveCpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ 
+  
+  <ion-row>
+    
+    <ion-col (click)="goToProfile() " ><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancel</h5></ion-col>
+    <ion-col><h5 style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preview</h5></ion-col>
+    <ion-col><h5 (click)="savePhoto()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save</h5></ion-col>
+  </ion-row>
+  
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin-top: -10px;">
+  <ion-item *ngIf="changedPP.length > 0">
+    <div style="position: relative; left: 0; top: 0;" *ngFor="let savephoto of changedPP">
+      <img src="{{receivedCP}}" class="fishes" (click)="coverPhoto()"/>       
+      <img src="{{savephoto.img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+      
+     </div><br><br><br><br><br>
+<h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
+
+</ion-item>
+
+<ion-item *ngIf="changedPP.length == 0">
+<div style="position: relative; left: 0; top: 0;">
+  <img src="{{receivedCP}}" class="fishes" (click)="coverPhoto()"/>
+  <img src="assets/imgs/profile.png" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+  
+ </div><br><br><br><br><br>
+<h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
+
+</ion-item>
+</ion-card>
+
+</ion-content>

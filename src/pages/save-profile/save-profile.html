@@ -1,26 +1,93 @@
 <ion-header  style="background-color:white;height:60px;width: 94.5%;margin-left:10px;">
+  
   <ion-grid>
     <ion-row>
     
-      <ion-col col-9 ><h6 text-center style="font-weight: bolder;margin-top:15px;margin-left: 60px;">&nbsp;Profile Picture</h6></ion-col>
-     
-      <ion-col col-3>
-      
-      
-      <button ion-button clear class="saveBtn"><h6 style="font-weight: bolder;text-transform: none;">Save</h6></button></ion-col>
+      <ion-col (click)="goToProfile()" ><h5>Cancel</h5></ion-col>
+      <ion-col col-5><h5 style="font-weight: bold;">&nbsp;&nbsp;Profile Picture</h5></ion-col>
+      <ion-col><h5 (click)="savePhoto()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save</h5></ion-col>
     </ion-row>
     
   </ion-grid>
+
 </ion-header>
 
-<ion-content style="background-color: #d9d9d9;">
-  <ion-card style="margin-top:-10px">
+<ion-content style="background-color:white" class="no-scroll">
+  <p style="color:grey;font-weight: bolder;">&nbsp;&nbsp;&nbsp;&nbsp;To:&nbsp;<ion-icon name="globe"></ion-icon>&nbsp;Public</p>
+  <br>
+  <p style="color:grey;margin-top: -5px;">&nbsp;&nbsp;&nbsp;&nbsp;Say something about your profile picture</p>
 
-  <ion-item>
+
+   <ion-item *ngIf="checkImg==true && checkCover ==true" style="margin-top: -10px;">
     <div style="position: relative; left: 0; top: 0;">
-      <img src="assets/imgs/scenery1.jpeg" class="fishes"/>
-      <img src="{{img}}" class="fish" (click)="uploadImg()" onError="this.src='assets/imgs/profile.png'"/>
-      <button  class="cam" (click)="coverPhoto()"><ion-icon name="camera" color="black"></ion-icon></button>
+      <img src="{{cp}}" class="fishes"/>       
+      <img src="{{img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+      
+     </div><br><br><br><br><br><br>
+     <div>
+    
+      <ion-row>
+        <ion-col col-3><button ion-button style="width: 90%;border-radius: 8px;background-color: #d9d9d9;margin-right: -5px;"><ion-icon name="crop" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Edit</p></button></ion-col>
+        <ion-col col-3 style="margin-left: -6px;"><button ion-button style="width: 100%;border-radius: 8px;background-color:#d9d9d9"><ion-icon name="square-outline" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Frames</p></button></ion-col>
+        <ion-col col-6><button ion-button style="width: 100%;border-radius: 8px;background-color: #d9d9d9"><ion-icon name="ios-time" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Make Temporary</p></button></ion-col>
+      </ion-row>
      
-    </div><br><br><br><br><br></ion-item></ion-card></ion-content>
+     </div>
+</ion-item>
+
+<ion-item *ngIf="checkImg==true && checkCover ==false" style="margin-top: -10px;">
+  <div style="position: relative; left: 0; top: 0;">
+    <img src="assets/imgs/scenery1.jpeg" class="fishes"/>       
+    <img src="{{img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+    
+   </div><br><br><br><br><br><br>
+   <div>
+  
+    <ion-row>
+      <ion-col col-3><button ion-button style="width: 90%;border-radius: 8px;background-color: #d9d9d9;margin-right: -5px;"><ion-icon name="crop" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Edit</p></button></ion-col>
+      <ion-col col-3 style="margin-left: -6px;"><button ion-button style="width: 100%;border-radius: 8px;background-color:#d9d9d9"><ion-icon name="square-outline" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Frames</p></button></ion-col>
+      <ion-col col-6><button ion-button style="width: 100%;border-radius: 8px;background-color: #d9d9d9"><ion-icon name="ios-time" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Make Temporary</p></button></ion-col>
+    </ion-row>
+   
+   </div>
+</ion-item>
+
+  <ion-item *ngIf="mySavedPhotos.length>0  && checkCover ==true" style="margin-top: -10px;">
+  <div style="position: relative; left: 0; top: 0;"  *ngFor="let savephoto of mySavedPhotos">
+  <img src="{{cp}}" class="fishes"/>
+  <img src="{{savephoto.img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+  
+ </div><br><br><br><br><br><br>
+
+ <div>
+    
+ <ion-row>
+   <ion-col col-3><button ion-button style="width: 90%;border-radius: 8px;background-color: #d9d9d9;margin-right: -5px;"><ion-icon name="crop" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Edit</p></button></ion-col>
+   <ion-col col-3 style="margin-left: -6px;"><button ion-button style="width: 100%;border-radius: 8px;background-color:#d9d9d9"><ion-icon name="square-outline" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Frames</p></button></ion-col>
+   <ion-col col-6><button ion-button style="width: 100%;border-radius: 8px;background-color: #d9d9d9"><ion-icon name="ios-time" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Make Temporary</p></button></ion-col>
+ </ion-row>
+
+</div>
+</ion-item>
+
+<ion-item *ngIf="mySavedPhotos.length>0  && checkCover ==false" style="margin-top: -10px;">
+  <div style="position: relative; left: 0; top: 0;"  *ngFor="let savephoto of mySavedPhotos">
+  <img src="assets/imgs/scenery1.jpeg" class="fishes"/>
+  <img src="{{savephoto.img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+  
+ </div><br><br><br><br><br><br>
+
+ <div>
+    
+ <ion-row>
+   <ion-col col-3><button ion-button style="width: 90%;border-radius: 8px;background-color: #d9d9d9;margin-right: -5px;"><ion-icon name="crop" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Edit</p></button></ion-col>
+   <ion-col col-3 style="margin-left: -6px;"><button ion-button style="width: 100%;border-radius: 8px;background-color:#d9d9d9"><ion-icon name="square-outline" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Frames</p></button></ion-col>
+   <ion-col col-6><button ion-button style="width: 100%;border-radius: 8px;background-color: #d9d9d9"><ion-icon name="ios-time" style="color: black;"></ion-icon><p style="font-size:13px;font-weight: bolder;text-transform: none;color: black;">&nbsp;Make Temporary</p></button></ion-col>
+ </ion-row>
+
+</div>
+</ion-item>
+
+    
+ </ion-content>
     

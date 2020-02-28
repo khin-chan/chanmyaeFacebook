@@ -53,7 +53,7 @@
         <div class="txtStory">{{img.txt}}</div>
       </ion-slide>
     </ion-slides>
-    <button ion-button class="storyBtn" color="storyBtn" block>
+    <button ion-button class="storyBtn" color="Btn" block>
       <p ion-text color="primary" style="text-transform: none;font-size: medium;">See All Stories</p>
     </button>
   </ion-card>
@@ -61,8 +61,8 @@
   <ion-card class="cardMarginTop">
     <ion-grid class="avatarRow">
       <ion-item>
-        <ion-avatar item-start>
-          <img src="assets/images/baby7.png">
+        <ion-avatar  item-start>
+          <img class="myborder" src="assets/images/baby7.png">
         </ion-avatar>
         <ion-row>
           <ion-col>
@@ -85,23 +85,23 @@
 
     <ion-card-content style="margin: -21px 0px -15px -5px;">
       Hello, I am glad to meet you. You are the best for me.
-      <ion-row *ngFor="let item of items" style="margin: 5px">
-        <ion-icon style="margin-bottom: -6px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
+      <ion-row *ngFor="let item of items1">
+        <ion-icon style="margin-left: -2px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
             ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
     </ion-card-content>
 
     <ion-item-divider color='black'></ion-item-divider>
 
-    <ion-row *ngFor="let item of items" style="padding-bottom: 2px;padding-top: 2px">
-      <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+    <ion-row *ngFor="let item of items1" style="padding-bottom: 2px;padding-top: 2px">
+      <ion-col *ngIf="item.like" (click)="handleLike1(item)" text-center>
         <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">Unlike</span>
       </ion-col>
-      <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+      <ion-col *ngIf="!item.like" (click)="handleLike1(item)" text-center>
         <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span ion-text
           color="darkgrey">Like</span>
       </ion-col>
-      <ion-col text-center>
+      <ion-col text-center (click)="openModal()">
         <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">Comment</span>
       </ion-col>
       <ion-col text-center>
@@ -142,7 +142,7 @@
       <ion-grid class="avatarRow">
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/images/baby3.png">
+            <img class="myborder" src="assets/images/baby3.png">
           </ion-avatar>
           <ion-row>
             <ion-col>
@@ -167,16 +167,16 @@
         </ion-card-content>
       </ion-grid>
     </ion-card>
-    <ion-row *ngFor="let item of items" style="margin: 5px">
-      <ion-icon style="margin-bottom: -6px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
+    <ion-row *ngFor="let item of items2">
+      <ion-icon style="margin-left: 7px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
           ion-text color="darkgrey">&nbsp;1</span></ion-icon>
     </ion-row>
     <ion-item-divider color='black'></ion-item-divider>
-    <ion-row *ngFor="let item of items" style="padding-bottom: 2px;padding-top: 2px">
-      <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+    <ion-row *ngFor="let item of items2" style="padding-bottom: 2px;padding-top: 2px">
+      <ion-col *ngIf="item.like" (click)="handleLike2(item)" text-center>
         <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">Unlike</span>
       </ion-col>
-      <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+      <ion-col *ngIf="!item.like" (click)="handleLike2(item)" text-center>
         <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span ion-text
           color="darkgrey">Like</span>
       </ion-col>
@@ -198,6 +198,7 @@
         <ion-icon name="ios-more" style="margin-left: -5px;"></ion-icon>
       </ion-col>
     </ion-row>
+
     <ion-slides loop="true" slidesPerView="1">
       <ion-slide *ngFor="let p of photos" class="imgSlide">
         <ion-card class="imgCard">
@@ -226,6 +227,8 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+
+
   </ion-card>
 
   <ion-card ion-card class="cardMarginTop">
@@ -260,7 +263,7 @@
       <ion-grid class="avatarRow">
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/images/baby3.png">
+            <img class="myborder" src="assets/images/baby3.png">
           </ion-avatar>
           <ion-row>
             <ion-col>
@@ -285,20 +288,20 @@
         </ion-card-content>
       </ion-grid>
     </ion-card>
-    <ion-row *ngFor="let item of items" style="margin: 5px">
-      <ion-icon style="margin-bottom: -6px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
+    <ion-row *ngFor="let item of items3">
+      <ion-icon style="margin-left: 7px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
           ion-text color="darkgrey">&nbsp;1</span></ion-icon>
     </ion-row>
     <ion-item-divider color='black'></ion-item-divider>
-    <ion-row *ngFor="let item of items" style="padding-bottom: 2px;padding-top: 2px">
-      <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+    <ion-row *ngFor="let item of items3" style="padding-bottom: 2px;padding-top: 2px">
+      <ion-col *ngIf="item.like" (click)="handleLike3(item)" text-center>
         <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">Unlike</span>
       </ion-col>
-      <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+      <ion-col *ngIf="!item.like" (click)="handleLike3(item)" text-center>
         <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span ion-text
           color="darkgrey">Like</span>
       </ion-col>
-      <ion-col text-center>
+      <ion-col text-center (click)="openModal()">
         <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">Comment</span>
       </ion-col>
       <ion-col text-center>

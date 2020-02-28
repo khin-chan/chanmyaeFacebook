@@ -1,4 +1,5 @@
-  <ion-header>
+
+  <!-- <ion-header>
     <ion-navbar>
     <ion-title>
     <ion-grid>
@@ -13,144 +14,278 @@
     </ion-grid>
   </ion-title>
 </ion-navbar>
-  </ion-header>
+  </ion-header> -->
+
   <ion-content>
-    <h3>&nbsp;&nbsp;&nbsp;&nbsp;New</h3>
+    <ion-grid >
+      <ion-row>
+        <ion-col style="margin-top: 10px;"><h2 style="margin-top:-5px ;margin-left: 10px;">Notifications</h2></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col style="margin-top: 15px;"> <ion-icon name="search" (click)="notiSearch()" style="zoom:1.4;margin-top:-5px;"></ion-icon></ion-col>
+      
+      </ion-row>
+    </ion-grid>
+    <h3 style="margin-top:-2px;margin-left: -2px;">&nbsp;&nbsp;&nbsp;&nbsp;New</h3>
     <ion-list no-lines>
-      <ion-grid>
+
+      <ion-grid style="margin-top: -15px;">
         <ion-item>
           <ion-avatar style="zoom:1.3" item-start>
             <img src="assets/imgs/profile.png">
           </ion-avatar>
-         <ion-row>
-          <ion-col col-8>
-            <h3 style="color: black;"><span style="font-weight: bolder;">May thu lwin </span>liked your photo.</h3>
+         <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+          <ion-col >
+            <p style="color: black;"><span style="font-weight: bolder;">Pyi Soe </span>invited you to like<span style="font-weight: bolder;"> Vanilla</span></p>
             </ion-col>
-            <ion-col>
-              
-            </ion-col><ion-col></ion-col>
-            <ion-col></ion-col>
+    </ion-row >
+    <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;"><span style="font-weight: bolder;">Dessert Cafe.</span></p></ion-col>
       <ion-col>
-      
-          <ion-icon name="ios-more"></ion-icon>
-       
-      </ion-col>
-    </ion-row>
+        <ion-icon name="ios-more" style="margin-left: 61px;"></ion-icon>
+     </ion-col></ion-row>
+    <ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">10min</p></ion-col></ion-row>
     </ion-item>
     </ion-grid>
 
-    <ion-grid>
+    <ion-grid style="margin-top: -18px;">
       <ion-item>
         <ion-avatar style="zoom:1.3" item-start>
-          <img src="assets/imgs/profile.png">
+          <img src="assets/imgs/myday1.png">
         </ion-avatar>
-       <ion-row>
-        <ion-col col-8>
-          <h3 style="color: black;"><span style="font-weight: bolder;">Chan Myae </span>liked your post.</h3>
+       <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+        <ion-col >
+          <p style="color: black;"><span style="font-weight: bolder;">Hein Htet Zaw Win </span>reacted to your</p>
           </ion-col>
-          <ion-col>
-            
-          </ion-col><ion-col></ion-col>
-          <ion-col></ion-col>
+  </ion-row >
+  <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;">comment: " Good ".</p></ion-col>
     <ion-col>
-      
-        <ion-icon name="ios-more"></ion-icon>
-     
-    </ion-col>
-  </ion-row>
+      <ion-icon name="ios-more" style="margin-left: 61px;"></ion-icon>
+   </ion-col></ion-row>
+  <ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">23min</p></ion-col></ion-row>
   </ion-item>
   </ion-grid>
-  <ion-grid>
+
+  <ion-grid style="margin-top: -18px;">
     <ion-item>
       <ion-avatar style="zoom:1.3" item-start>
-        <img src="assets/imgs/profile.png">
+        <img src="assets/imgs/myday2.png">
       </ion-avatar>
-     <ion-row>
-      <ion-col col-8>
-        <h3 style="color: black;"><span style="font-weight: bolder;">Khin Khin </span>posted a video.</h3>
+     <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+      <ion-col >
+        <p style="color: black;"><span style="font-weight: bolder;">Bhone Thit Tun </span>and<span style="font-weight: bolder;"> Shin Yamin</span></p>
         </ion-col>
-        <ion-col>
-          
-        </ion-col><ion-col></ion-col>
-        <ion-col></ion-col>
+</ion-row >
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;">also commented on<span style="font-weight: bolder;"> Pann Sabai</span></p></ion-col>
   <ion-col>
-    
-      <ion-icon name="ios-more"></ion-icon>
-    
-  </ion-col>
-</ion-row>
+    <ion-icon name="ios-more" style="margin-left: 61px;"></ion-icon>
+ </ion-col></ion-row>
+ <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col><p style="color: black;"><span style="font-weight: bolder;">Phyu</span>'s post.</p></ion-col></ion-row>
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">28min</p></ion-col></ion-row>
 </ion-item>
 </ion-grid>
-<ion-grid>
+
+<ion-grid style="margin-top: -18px;">
   <ion-item>
     <ion-avatar style="zoom:1.3" item-start>
-      <img src="assets/imgs/profile.png">
+      <img src="assets/imgs/fashion.jpeg">
     </ion-avatar>
-   <ion-row>
+   <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+    <ion-col >
+      <p style="color: black;">A page you like,<span style="font-weight: bolder;"> Fashion World</span></p>
+      </ion-col>
+</ion-row >
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;"> changed its name to<span style="font-weight: bolder;"> Outfits.</span></p></ion-col>
+<ion-col>
+  <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+</ion-col></ion-row>
+
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">30min</p></ion-col></ion-row>
+</ion-item>
+</ion-grid>
+
+<ion-grid style="margin-top: -18px;">
+  <ion-item>
+    <ion-avatar style="zoom:1.3" item-start>
+      <img src="assets/imgs/icon.png">
+    </ion-avatar>
+   <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+    <ion-col >
+      <p style="color: black;"><span style="font-weight: bolder;">Pyi Soe Oo </span>posted in<span style="font-weight: bolder;"> University of</span> </p>
+      </ion-col>
+</ion-row >
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;"><span style="font-weight: bolder;">Information Techology (UIT).</span></p></ion-col>
+<ion-col>
+  <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+</ion-col></ion-row>
+
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">35min</p></ion-col></ion-row>
+</ion-item>
+</ion-grid>
+
+<ion-grid style="margin-top: -18px;">
+  <ion-item>
+    <ion-avatar style="zoom:1.3" item-start>
+      <img src="assets/imgs/splash.png">
+    </ion-avatar>
+   <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+    <ion-col >
+      <p style="color: black;"><span style="font-weight: bolder;">Nay Aung Lwin </span>invited you to like</p>
+      </ion-col>
+</ion-row >
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;"><span style="font-weight: bolder;">Hi-So Mall.</span></p></ion-col>
+<ion-col>
+  <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+</ion-col></ion-row>
+
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">47min</p></ion-col></ion-row>
+</ion-item>
+</ion-grid>
+
+<ion-grid style="margin-top: -18px;">
+  <ion-item>
+    <ion-avatar style="zoom:1.3" item-start>
+      <img src="assets/imgs/girlPic.jpeg">
+    </ion-avatar>
+   <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+    <ion-col >
+      <p style="color: black;"><span style="font-weight: bolder;">Thinzar Oo,Thet Myat Noe </span>and 22</p>
+      </ion-col>
+</ion-row >
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;">other people reacted to a post you</p></ion-col>
+<ion-col>
+  <ion-icon name="ios-more" style="margin-left: 61px;"></ion-icon>
+</ion-col></ion-row>
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col><p style="color: black;">shared.</p></ion-col></ion-row>
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">50min</p></ion-col></ion-row>
+</ion-item>
+</ion-grid>
+
+<ion-grid style="margin-top: -18px;">
+  <ion-item>
+    <ion-avatar style="zoom:1.3" item-start>
+      <img src="assets/imgs/1.jpg">
+    </ion-avatar>
+   <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+    <ion-col >
+      <p style="color: black;"><span style="font-weight: bolder;">Myat Kay Thi </span>and 4 other friends</p>
+      </ion-col>
+</ion-row >
+<ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;">had birthdays yesterday.</p></ion-col>
+<ion-col>
+  <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+</ion-col></ion-row>
+
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">58min</p></ion-col></ion-row>
+</ion-item>
+</ion-grid>
+
+<ion-grid style="margin-top: -18px;">
+  <ion-item>
+    <ion-avatar style="zoom:1.3" item-start>
+      <img src="assets/imgs/flower.jpeg">
+    </ion-avatar>
+   <ion-row style="margin-left: -5px;">
     <ion-col col-8>
-      <h3 style="color: black;"><span style="font-weight: bolder;">Pann Sabai </span>added to her story.</h3>
+      <h3 style="color: black;"><span style="font-weight: bolder;">Pann Phyu </span>added to her story.</h3>
       </ion-col>
       <ion-col>
         
       </ion-col><ion-col></ion-col>
       <ion-col></ion-col>
 <ion-col>
- 
+  
     <ion-icon name="ios-more"></ion-icon>
- 
+  
 </ion-col>
 </ion-row>
+<ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">1h</p></ion-col></ion-row>
 </ion-item>
 </ion-grid>
  </ion-list>
 
-<hr>
+<ion-item-divider style="margin-top:-30px"></ion-item-divider>
 
     <h3>&nbsp;&nbsp;&nbsp;&nbsp;Earlier</h3>
-    <ion-list>
-      <ion-grid>
+    <ion-list no-lines>
+      <ion-grid style="margin-top: -18px;">
         <ion-item>
           <ion-avatar style="zoom:1.3" item-start>
-            <img src="assets/imgs/profile.png">
+            <img src="assets/imgs/icon.png">
           </ion-avatar>
-         <ion-row>
-          <ion-col col-8>
-            <h3 style="color: black;"><span style="font-weight: bolder;">Aung Soe Oo </span>liked your photo.</h3>
+         <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+          <ion-col >
+            <p style="color: black;"><span style="font-weight: bolder;">AungThura Htun </span>invited you to like</p>
             </ion-col>
-            <ion-col>
-              
-            </ion-col><ion-col></ion-col>
-            <ion-col></ion-col>
+      </ion-row >
+      <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;"><span style="font-weight: bolder;">Gcn.</span></p></ion-col>
       <ion-col>
-       
-          <ion-icon name="ios-more"></ion-icon>
-        
-      </ion-col>
-      </ion-row>
-      </ion-item>
-      </ion-grid>
-      <ion-grid>
-        <ion-item>
-          <ion-avatar style="zoom:1.3" item-start>
-            <img src="assets/imgs/profile.png">
-          </ion-avatar>
-         <ion-row>
-          <ion-col col-8>
-            <h3 style="color: black;"><span style="font-weight: bolder;">Aung Soe Oo </span>added to his story.</h3>
-            </ion-col>
-            <ion-col>
-              
-            </ion-col><ion-col></ion-col>
-            <ion-col></ion-col>
-      <ion-col>
+        <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+      </ion-col></ion-row>
       
-          <ion-icon name="ios-more"></ion-icon>
-       
-      </ion-col>
-      </ion-row>
+      <ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">9h</p></ion-col></ion-row>
       </ion-item>
-      </ion-grid>
-      <ion-grid>
+      </ion-grid> 
+
+      <ion-grid style="margin-top: -18px;">
+        <ion-item>
+          <ion-avatar style="zoom:1.3" item-start>
+            <img src="assets/imgs/myJob.png">
+          </ion-avatar>
+         <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+          <ion-col >
+            <p style="color: black;"><span style="font-weight: bolder;">MyJobs.com.mm </span>added an event</p>
+            </ion-col>
+      </ion-row >
+      <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;">that might interest you.</p></ion-col>
+      <ion-col>
+        <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+      </ion-col></ion-row>
+      
+      <ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">11h</p></ion-col></ion-row>
+      </ion-item>
+      </ion-grid> 
+
+      <ion-grid style="margin-top: -18px;">
+        <ion-item>
+          <ion-avatar style="zoom:1.3" item-start>
+            <img src="assets/imgs/4.jpg">
+          </ion-avatar>
+         <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+          <ion-col >
+            <p style="color: black;"><span style="font-weight: bolder;">Khin Chan Myae </span>reacted to your</p>
+            </ion-col>
+      </ion-row >
+      <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;">sticker comment.</p></ion-col>
+      <ion-col>
+        <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+      </ion-col></ion-row>
+      
+      <ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">14h</p></ion-col></ion-row>
+      </ion-item>
+      </ion-grid> 
+
+
+      <ion-grid style="margin-top: -18px;">
+        <ion-item>
+          <ion-avatar style="zoom:1.3" item-start>
+            <img src="assets/imgs/10.png">
+          </ion-avatar>
+         <ion-row style="margin-bottom: -15px;margin-left: -5px;">
+          <ion-col >
+            <p style="color: black;"><span style="font-weight: bolder;">Min Shin Thant </span>invited you to like</p>
+            </ion-col>
+      </ion-row >
+      <ion-row style="margin-bottom: -15px;margin-left: -5px;"><ion-col col-8><p style="color: black;"><span style="font-weight: bolder;">Doctor Shinn's Vlogs.</span></p></ion-col>
+      <ion-col>
+        <ion-icon name="ios-more"  style="margin-left: 61px;"></ion-icon>
+      </ion-col></ion-row>
+      
+      <ion-row><ion-col><p style="font-size: small;color: grey;margin-left: -5px;">20h</p></ion-col></ion-row>
+      </ion-item>
+      </ion-grid> 
+
+      <!-- <ion-grid>
         <ion-item>
           <ion-avatar style="zoom:1.3" item-start>
             <img src="assets/imgs/profile.png">
@@ -166,7 +301,7 @@
       <ion-col>
         
           <ion-icon name="ios-more"></ion-icon>
-      
+        
       </ion-col>
       </ion-row>
       </ion-item>
@@ -185,9 +320,9 @@
             </ion-col><ion-col></ion-col>
             <ion-col></ion-col>
       <ion-col>
-      
+        
           <ion-icon name="ios-more"></ion-icon>
-       
+        
       </ion-col>
       </ion-row>
       </ion-item>
@@ -206,13 +341,13 @@
             </ion-col><ion-col></ion-col>
             <ion-col></ion-col>
       <ion-col>
-       
+        
           <ion-icon name="ios-more"></ion-icon>
-      
+       
       </ion-col>
       </ion-row>
       </ion-item>
-      </ion-grid>
+      </ion-grid> -->
     </ion-list>
   </ion-content>
 

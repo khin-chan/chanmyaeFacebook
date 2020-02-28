@@ -25,6 +25,8 @@ page-save-profile {
   position: relative;
   top: 0;
   left: 0;
+  width:22em;
+  height: 10em;
 }
 .fish
 {
@@ -32,11 +34,11 @@ page-save-profile {
   
 //   top: 60px;
 //   left: 80px;
-  width:10em;
-  height:10em;
+  width:15em;
+  height:15em;
   border-radius:50%;
-  top: 110px;
-right: 77px;
+  top: 20px;
+right: 45px;
 z-index: 2;
 
 }
@@ -71,5 +73,9 @@ margin-left: 30px;
 background-color: white;
 color:black;
 
+}
+
+.no-scroll .scroll-content{
+  overflow: hidden;
 }
 }

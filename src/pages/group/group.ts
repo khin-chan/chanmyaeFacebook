@@ -41,7 +41,8 @@ export class GroupPage {
 
   ];
 
-  items = [{ id: 1, like: false }]
+  items1 = [{ id: 1, like: false }];
+  items2 = [{ id: 1, like: false }];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController) {      
@@ -109,10 +110,15 @@ export class GroupPage {
     this.navCtrl.push(SearchPage);
   }
 
-  handleLike(item){
-    console.log("Click Like  => ");      
+  handleLike1(item){
+    console.log("Click Like 1 => ");      
     item.like = !item.like;
   }
+  handleLike2(item){
+    console.log("Click Like 2=> ");      
+    item.like = !item.like;
+  }
+
 
 }
 

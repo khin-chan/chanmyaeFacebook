@@ -18,7 +18,9 @@ import { SearchPage } from '../search/search';
 })
 export class WatchPage {
 
-  items = [{id: 1, like: false}]
+  items1 = [{id: 1, like: false}];
+  items2 = [{id: 1, like: false}];
+  items3 = [{id: 1, like: false}];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -74,8 +76,16 @@ export class WatchPage {
   search(){
     this.navCtrl.push(SearchPage);
   } 
-  handleLike(item){
-    console.log("Click Like   => ");      
+  handleLike1(item){
+    console.log("Click Like 1  => ");      
+    item.like = !item.like;
+  }
+  handleLike2(item){
+    console.log("Click Like 2  => ");      
+    item.like = !item.like;
+  }
+  handleLike3(item){
+    console.log("Click Like 3  => ");      
     item.like = !item.like;
   }
 

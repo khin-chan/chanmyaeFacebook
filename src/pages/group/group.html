@@ -91,19 +91,19 @@
 
 
       </ion-card-content>
-      <ion-row *ngFor="let item of items" style="margin: 5px">
+      <ion-row *ngFor="let item of items1" style="margin: 5px">
         <ion-icon style="margin-bottom: -6px; margin-left: 12px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary">
           <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
 
       <ion-item-divider color='black'></ion-item-divider>
 
-      <ion-row *ngFor="let item of items" style="padding-bottom: 5px;padding-top: 5px">
-        <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+      <ion-row *ngFor="let item of items1" style="padding-bottom: 5px;padding-top: 5px">
+        <ion-col *ngIf="item.like" (click)="handleLike1(item)" text-center>
           <ion-icon name="md-thumbs-up" color="primary"></ion-icon>
           <span ion-text color="primary">&nbsp;Unlike</span>
         </ion-col>
-        <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+        <ion-col *ngIf="!item.like" (click)="handleLike1(item)" text-center>
           <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon>
           <span ion-text color="darkgrey">&nbsp;Like</span>
         </ion-col>
@@ -172,19 +172,19 @@
         <img src="assets/imgs/4.jpg" />
         
       </ion-card-content>
-      <ion-row *ngFor="let item of items" style="margin: 5px">
+      <ion-row *ngFor="let item of items2" style="margin: 5px">
         <ion-icon style="margin-bottom: -6px; margin-left: 12px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary">
           <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
 
       <ion-item-divider color='black'></ion-item-divider>
 
-      <ion-row *ngFor="let item of items" style="padding-bottom: 5px;padding-top: 5px">
-        <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+      <ion-row *ngFor="let item of items2" style="padding-bottom: 5px;padding-top: 5px">
+        <ion-col *ngIf="item.like" (click)="handleLike2(item)" text-center>
           <ion-icon name="md-thumbs-up" color="primary"></ion-icon>
           <span ion-text color="primary">&nbsp;Unlike</span>
         </ion-col>
-        <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+        <ion-col *ngIf="!item.like" (click)="handleLike2(item)" text-center>
           <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon>
           <span ion-text color="darkgrey">&nbsp;Like</span>
         </ion-col>

@@ -1,5 +1,13 @@
 page-home {
     #home{ 
+        .myborder{
+        //    width: 90px !important;
+        //    height: 60px !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            border-radius: 50%;
+            border: 0.19em solid #03256C !important;
+          }
         .cardMarginTop{
             margin-top: -3px;
         }   
