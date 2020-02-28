@@ -5,107 +5,87 @@
 </ion-header> -->
 
 <ion-content class="grid-basic-page" style="background-color: #d9d9d9;">
-
-
-
   <div>
     <ion-card>
       <ion-grid>
         <ion-row>
           <ion-col style="padding-right: 10%;">
-            <h1>Watch</h1>
+            <p style="font-size: 20px;">Watch</p>
           </ion-col>
+          <ion-col></ion-col>
           <ion-col></ion-col>
           <ion-col></ion-col>
           <ion-col>
-            <button style="background-color: white;" large (click)="watchlist()">
-              <ion-icon name='person' style="zoom: 2.0"></ion-icon>
-            </button>
+            <ion-icon name='person' (click)="watchlist()" style="zoom: 1.8"></ion-icon>
           </ion-col>
           <ion-col align-item-end>
-            <button (click)="search()" style="background-color: white;" large>
-              <ion-icon name="search" style="zoom: 2.0;"></ion-icon>
-            </button>
+            <ion-icon name="search" (click)="search()" style="zoom: 1.8;"></ion-icon>
           </ion-col>
         </ion-row>
-
       </ion-grid>
+      <div class="horizontalLine"></div>
+      <p style="padding-left: 3%;font-size: 15px;padding-top:6px;padding-bottom: 6px;">Your Watchlist</p>
     </ion-card>
     <ion-card>
-
-
-
-
       <ion-item>
         <ion-avatar item-start>
           <img src="assets/imgs/cat.png">
         </ion-avatar>
         <ion-row>
           <ion-col>
-            <p style="color:black;font-size: medium;">Cute Cat <span style="color: #0f993d;font-size:  13px"> &nbsp; .
+            <p style="color:black;font-size: medium;">Cute Cat <span style="color: #9370DB;font-size:  13px"> &nbsp; .
                 Follow</span></p>
-
           </ion-col>
           <ion-col>
             <!-- <ion-icon name="arrow-dropright"></ion-icon>
                <h5 style="color: green;">.</h5> -->
           </ion-col>
-
           <ion-col>
           </ion-col>
           <ion-col></ion-col>
           <ion-col>
             <ion-icon name="ios-more" (click)="alert()" style="color:black;zoom:1.3"></ion-icon>
           </ion-col>
-
         </ion-row>
         <ion-row style="margin-top: -14px;">
-
           <ion-col>
-            <h6 style="color:darkgrey;font-size: smaller;">Jan 22 at 7:39 PM .</h6>
+            <h6 style="color:darkgrey;font-size: smaller;">Jan 22 at 7:39 PM<span>&nbsp; ·</span></h6>
           </ion-col>
-          <ion-col style="margin-top: 1px">
+          <ion-col style="margin-top: 0.5px">
             <ion-icon name="md-globe" style="color: grey;zoom: 0.7"></ion-icon>
           </ion-col>
-
         </ion-row>
       </ion-item>
-
-
       <ion-card-content>
-        <ion-card-title>
-
-        </ion-card-title>
         <p>
           her name's Meow Meow and she's taking the world by storm
         </p>
         <img src="assets/imgs/giphy.gif" />
       </ion-card-content>
-
-
-      <ion-item-divider color='black'></ion-item-divider>
-
-      <ion-row style="padding-top: 9px;padding-bottom: 9px">
-
-        <ion-col text-center>
-          <ion-icon name="ios-thumbs-up-outline" class="icon-style"></ion-icon><span
-            class="text-style">&nbsp;Like</span>
-        </ion-col>
-        <ion-col text-center>
-          <ion-icon name="ios-text-outline" class="icon-style"></ion-icon><span class="text-style">&nbsp;Comment</span>
-        </ion-col>
-        <ion-col text-center>
-          <ion-icon name="ios-redo-outline" class="icon-style"></ion-icon><span class="text-style">&nbsp;Share</span>
-        </ion-col>
-
+      <ion-row *ngFor="let item of items">
+        <ion-icon style="margin-left: 15px;" *ngIf="item.like" name="ios-thumbs-up-outline"
+          color="primary">
+          <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
-
-
-
-
-
-
-
+      <ion-item-divider color='black'></ion-item-divider>
+      <ion-row *ngFor="let item of items" style="padding-bottom: 5px;padding-top: 5px">
+        <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+          <ion-icon name="md-thumbs-up" color="primary"></ion-icon>
+          <span ion-text color="primary">&nbsp;Unlike</span>
+        </ion-col>
+        <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+          <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon>
+          <span ion-text color="darkgrey">&nbsp;Like</span>
+        </ion-col>
+        <ion-col text-center>
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon>
+          <span class="text-style">&nbsp;Comment</span>
+        </ion-col>
+        <ion-col text-center>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon>
+          <span class="text-style">&nbsp;Share</span>
+        </ion-col>
+      </ion-row>
       <!-- <ion-item>
           <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
           Albums
@@ -117,89 +97,72 @@
           Followers
           <ion-badge item-end>260k</ion-badge>
         </ion-item> -->
-
-
     </ion-card>
   </div>
-
-
-
   <div>
-
-
     <ion-card>
-
       <ion-item>
         <ion-avatar item-start>
           <img src="assets/imgs/foot.png">
         </ion-avatar>
         <ion-row>
           <ion-col>
-            <p style="color:black;font-size: medium;">FootBall<span style="color: #0f993d;font-size: 13px;">&nbsp; .
+            <p style="color:black;font-size: medium;">FootBall<span style="color: #9370DB;font-size: 13px;">&nbsp; .
                 Follow</span></p>
-
           </ion-col>
           <ion-col>
             <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
           </ion-col>
-
           <ion-col>
           </ion-col>
           <ion-col></ion-col>
           <ion-col>
             <ion-icon name="ios-more" (click)="alert()" style="color:black;zoom:1.3"></ion-icon>
           </ion-col>
-
-
-
         </ion-row>
         <ion-row style="margin-top: -14px;">
           <ion-col>
-            <h6 style="color:darkgrey;font-size: smaller;">Feb 4 at 11:31PM .</h6>
+            <h6 style="color:darkgrey;font-size: smaller;">Jan 22 at 7:39 PM<span>&nbsp; ·</span></h6>
           </ion-col>
           <ion-col style="margin-top: 1px;">
             <ion-icon name="md-globe" style="color:grey;zoom: 0.7"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-item>
-
-
       <ion-card-content>
-        <ion-card-title>
-
-        </ion-card-title>
         <p>
           The only guaranteed way to get into the Camp Nou. Buy your tickets now! Official Tickets. Best Price
           Guarantee. Official Website. Services: Telephone helpline, Best price guarantee, Secure online payment.
           Search Results
           Sports results
-
         </p>
-        <img src="assets/imgs/football.gif" />
+        <img src="assets/imgs/football.gif" />               
       </ion-card-content>
-
-
+      <ion-row *ngFor="let item of items">
+        <ion-icon style="margin-left: 15px;" *ngIf="item.like" name="ios-thumbs-up-outline"
+          color="primary">
+          <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+      </ion-row>
       <ion-item-divider color='black'></ion-item-divider>
-      <ion-row style="padding-top: 9px;padding-bottom: 9px">
-
-        <ion-col text-center>
-          <ion-icon name="ios-thumbs-up-outline" class="icon-style"></ion-icon><span
-            class="text-style">&nbsp;Like</span>
+      <ion-row *ngFor="let item of items" style="padding-bottom: 5px;padding-top: 5px">
+        <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+          <ion-icon name="md-thumbs-up" color="primary"></ion-icon>
+          <span ion-text color="primary">&nbsp;Unlike</span>
+        </ion-col>
+        <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+          <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon>
+          <span ion-text color="darkgrey">&nbsp;Like</span>
         </ion-col>
         <ion-col text-center>
-          <ion-icon name="ios-text-outline" class="icon-style"></ion-icon><span class="text-style">&nbsp;Comment</span>
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon>
+          <span class="text-style">&nbsp;Comment</span>
         </ion-col>
         <ion-col text-center>
-          <ion-icon name="ios-redo-outline" class="icon-style"></ion-icon><span class="text-style">&nbsp;Share</span>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon>
+          <span class="text-style">&nbsp;Share</span>
         </ion-col>
       </ion-row>
-
-
-
-
-
-
-      <!-- <ion-item>
+            <!-- <ion-item>
             <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
             Albums
             <ion-badge item-end>9</ion-badge>
@@ -210,86 +173,69 @@
             Followers
             <ion-badge item-end>260k</ion-badge>
           </ion-item> -->
-
-
     </ion-card>
   </div>
-
-
-
   <div>
-
-
     <ion-card>
-
       <ion-item>
         <ion-avatar item-start>
           <img src="assets/imgs/splash.png">
         </ion-avatar>
         <ion-row>
           <ion-col>
-            <p style="color:black;font-size: medium;">Sports<span style="color:#0f993d;font-size: 13px;"> &nbsp; .
+            <p style="color:black;font-size: medium;">Sports<span style="color:#9370DB;font-size: 13px;"> &nbsp; .
                 Follow</span></p>
-
           </ion-col>
           <ion-col>
             <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
           </ion-col>
-
           <ion-col>
           </ion-col>
           <ion-col></ion-col>
           <ion-col>
             <ion-icon name="ios-more" (click)="alert()" style="color:black;zoom:1.3"></ion-icon>
           </ion-col>
-
-
-
         </ion-row>
         <ion-row style="margin-top: -14px;">
           <ion-col>
-            <h6 style="color:darkgrey;font-size: smaller;">Feb 7 at 10:30 PM . </h6>
+            <h6 style="color:darkgrey;font-size: smaller;">Jan 22 at 7:39 PM<span>&nbsp; ·</span></h6>
           </ion-col>
-          <ion-col style="margin-top: 1px;">
+          <ion-col style="margin-top: 0.5px;">
             <ion-icon name="md-globe" style="color:grey;zoom: 0.7"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-item>
-
-
       <ion-card-content>
-        <ion-card-title>
-
-        </ion-card-title>
         <p>
           Welcome to FC Barcelona's official YouTube channel! Highlights, challenges, interviews, vlogs, live shows and
           much more Turn your notifications on and...
         </p>
-        <img src="assets/imgs/football1.gif" />
+        <img src="assets/imgs/football1.gif" />                
       </ion-card-content>
-
-
-      <ion-item-divider color='black'></ion-item-divider>
-
-      <ion-row style="padding-top: 9px;padding-bottom: 9px">
-
-        <ion-col text-center>
-          <ion-icon name="ios-thumbs-up-outline" class="icon-style"></ion-icon><span
-            class="text-style">&nbsp;Like</span>
-        </ion-col>
-        <ion-col text-center>
-          <ion-icon name="ios-text-outline" class="icon-style"></ion-icon><span class="text-style">&nbsp;Comment</span>
-        </ion-col>
-        <ion-col text-center>
-          <ion-icon name="ios-redo-outline" class="icon-style"></ion-icon><span class="text-style">&nbsp;Share</span>
-        </ion-col>
-
+      <ion-row *ngFor="let item of items">
+        <ion-icon style="margin-left: 15px;" *ngIf="item.like" name="ios-thumbs-up-outline"
+          color="primary">
+          <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
-
-
-
-
-
+      <ion-item-divider color='black'></ion-item-divider>
+        <ion-row *ngFor="let item of items" style="padding-bottom: 5px;padding-top: 5px">
+          <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+            <ion-icon name="md-thumbs-up" color="primary"></ion-icon>
+            <span ion-text color="primary">&nbsp;Unlike</span>
+          </ion-col>
+          <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+            <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon>
+            <span ion-text color="darkgrey">&nbsp;Like</span>
+          </ion-col>
+          <ion-col text-center>
+            <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon>
+            <span class="text-style">&nbsp;Comment</span>
+          </ion-col>
+          <ion-col text-center>
+            <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon>
+            <span class="text-style">&nbsp;Share</span>
+          </ion-col>
+        </ion-row>
       <!-- <ion-item>
             <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
             Albums
@@ -301,8 +247,6 @@
             Followers
             <ion-badge item-end>260k</ion-badge>
           </ion-item> -->
-
-
     </ion-card>
   </div>
 </ion-content>

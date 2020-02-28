@@ -18,14 +18,13 @@ import { SearchPage } from '../search/search';
 })
 export class WatchPage {
 
- 
+  items = [{id: 1, like: false}]
 
-
- 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public actionSheetCtrl: ActionSheetController) {
-  }
+               
+              }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupPage');
@@ -74,7 +73,12 @@ export class WatchPage {
 
   search(){
     this.navCtrl.push(SearchPage);
+  } 
+  handleLike(item){
+    console.log("Click Like   => ");      
+    item.like = !item.like;
   }
+
   }
 
 

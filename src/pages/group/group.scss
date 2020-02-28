@@ -28,10 +28,10 @@ page-home {
 }
 #more {display: none;}
 
-.photos{
-object-fit: cover,
+// .photos{
+// object-fit: cover,
 
-}
+// }
 .icon-style{
   color:grey,
 }
@@ -48,7 +48,7 @@ object-fit: cover,
   color:black;
 }
 .photoBtn2{
-  width: 65%;
+  width: 85%;
   font-size: 12px;;
   border-radius:20px;
   margin-top:8px;
@@ -56,10 +56,15 @@ object-fit: cover,
   color:black;
 }
 .photoBtn3{
-  width: 55%;
+  width: 75%;
   font-size: 12px;
   border-radius:20px;
   margin-top:8px;
   background-color: #d9d9d9;
   color:black;
 }
+
+.gri{
+  border-top: 1px solid black;
+}
+

@@ -6,11 +6,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // import { TabsPage } from '../pages/tabs/tabs';
 import { SuperTabsPage } from '../pages/super-tabs/super-tabs';
 
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SuperTabsPage;
+  rootPage:any = SuperTabsPage;  
 
   constructor(platform: Platform,private statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

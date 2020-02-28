@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { SearchPage } from '../search/search';
-import { getQueryValue } from '@angular/core/src/view/query';
+
 
 /**
  * Generated class for the GroupPage page.
@@ -19,11 +19,11 @@ export class GroupPage {
   // Data = [
   //   {
   //     name1: "test1",
-      
+
   //   },
   //   {
   //     name2: "test2",
-   
+
   //   }
   // ];
   // datas = ['text1','text2','text3','text4','text5'];
@@ -31,35 +31,34 @@ export class GroupPage {
   imgs: string;
   tet: string;
   Datas = [
-    {imgs: '1.jpg', tet: 'IT Job Myanmar'},
-    {imgs:'3.jpg', tet:'Job Net.com'},
-    {imgs: '4.jpg', tet: 'IT Page'},
-    {imgs: 'bg.jpg', tet: 'IT Job Page'},
-    {imgs: 'bb.jpg', tet: 'HELLO'},
-    {imgs: 'cat.png', tet: 'CUTE'},
-    {imgs: 'splash1.png', tet: 'EXO'}
+    { imgs: '1.jpg', tet: 'IT Job Myanmar' },
+    { imgs: '3.jpg', tet: 'Job Net.com' },
+    { imgs: '4.jpg', tet: 'IT Page' },
+    { imgs: 'bg.jpg', tet: 'IT Job Page' },
+    { imgs: 'bb.jpg', tet: 'HELLO' },
+    { imgs: 'cat.png', tet: 'CUTE' },
+    { imgs: 'splash1.png', tet: 'EXO Myanmar Fan Page' }
 
   ];
 
-  
- 
+  items = [{ id: 1, like: false }]
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public actionSheetCtrl: ActionSheetController) {
+    public actionSheetCtrl: ActionSheetController) {      
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupPage');
   }
-  alert(){
+  alert() {
     const actionSheet = this.actionSheetCtrl.create({
-   
+
       buttons: [
-    
+
         {
           icon: 'ios-bookmark-outline',
           text: 'Save post',
-         
+
           // role: 'destructive',
           handler: () => {
             console.log('Destructive clicked');
@@ -71,12 +70,12 @@ export class GroupPage {
           text: 'Find Support or Report Post',
         },
 
-        
+
         {
           icon: 'ios-notifications-outline',
           text: 'Turn on notifications for this post',
         },
-        
+
         {
           icon: 'ios-link-outline',
           text: 'Copy Link',
@@ -94,21 +93,27 @@ export class GroupPage {
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");
     var btnText = document.getElementById("myBtn");
-  
+
     if (dots.style.display === "none") {
       dots.style.display = "inline";
-      btnText.innerHTML = "see more"; 
+      btnText.innerHTML = "see more";
       moreText.style.display = "none";
     } else {
       dots.style.display = "none";
-      btnText.innerHTML = "see less"; 
+      btnText.innerHTML = "see less";
       moreText.style.display = "inline";
     }
   }
 
-  search(){
+  search() {
     this.navCtrl.push(SearchPage);
   }
+
+  handleLike(item){
+    console.log("Click Like  => ");      
+    item.like = !item.like;
   }
+
+}
 
 

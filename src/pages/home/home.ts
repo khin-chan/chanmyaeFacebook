@@ -29,16 +29,10 @@ export class HomePage {
 
   items = [{id: 1, like: false}]
 
-  likeValue: number;
-  //dislikeValue: number;
-  likebtnColor: string = "darkgrey";
-  likeiconName: string = "ios-thumbs-up-outline";
-
   constructor(public platform: Platform,
     public navCtrl: NavController,
     public actionsheetCtrl: ActionSheetController) {
-      this.likeValue = 0;
-     // this.dislikeValue = 0;
+      
   }
 
   openBackgroundGeolocation(){
@@ -119,18 +113,10 @@ export class HomePage {
     });
     actionSheet.present();
   }
-  handleLike(){
-    console.log("Click Like => ");   
-    this.likeValue=1;
-    this.likebtnColor = "primary";
-    this.likeiconName = "md-thumbs-up";
+  
+  handleLike(item){
+    console.log("Click Like   => ");   
     
-  }
-  handleLike2(item){
-    console.log("Click Like  2 => ");   
-    // this.likeValue=1;
-    // this.likebtnColor = "primary";
-    // this.likeiconName = "md-thumbs-up";
     item.like = !item.like;
   }
 

@@ -94,18 +94,97 @@
     <ion-item-divider color='black'></ion-item-divider>
 
     <ion-row *ngFor="let item of items" style="padding-bottom: 2px;padding-top: 2px">
-      <ion-col *ngIf="item.like" (click)="handleLike2(item)" text-center>
-        <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">&nbsp;Unlike</span>
+      <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+        <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">Unlike</span>
       </ion-col>
-      <ion-col *ngIf="!item.like" (click)="handleLike2(item)" text-center>
+      <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
         <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span ion-text
-          color="darkgrey">&nbsp;Like</span>
+          color="darkgrey">Like</span>
       </ion-col>
       <ion-col text-center>
-        <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span>
+        <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">Comment</span>
       </ion-col>
       <ion-col text-center>
-        <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span>
+        <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">Share</span>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card ion-card class="cardMarginTop">
+    <ion-grid class="avatarRow">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/baby1.png">
+        </ion-avatar>
+        <ion-row>
+          <ion-col>
+            <h2 ion-text color="dark">Khin Chan Myae Han</h2>
+          </ion-col>
+          <ion-col col-1 style="margin-right: 5px;" (click)="openMenu()">
+            <ion-icon name="ios-more" ></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -18px;margin-left:-6px">
+          <ion-col col-2>
+            <h6 color="darkgrey" style="font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon style="margin-left: -3px;zoom: 0.7; margin-top: 2px;" color="darkgrey" name="md-globe"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-card-content>
+        Hello, I am glad to meet you. You are the best for me.
+      </ion-card-content>
+    </ion-grid>
+
+    <ion-card>
+      <ion-grid class="avatarRow">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/images/baby3.png">
+          </ion-avatar>
+          <ion-row>
+            <ion-col>
+              <h2 ion-text color="dark">Khin Chan Myae Han</h2>
+            </ion-col>           
+          </ion-row>
+          <ion-row style="margin-top:-14px;margin-left:-6px">
+            <ion-col col-7>
+              <h6 color="darkgrey" style="font-size:smaller;">Saturday at 10:33AM .</h6>
+            </ion-col>
+            <ion-col>
+              <ion-icon style="margin-left: -5px;zoom: 0.7; margin-top: 1px;" name="md-globe" color="darkgrey">
+              </ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-card-content>
+          This is share post. I want to try the best.
+          This is share post. I want to try the best.
+          This is share post. I want to try the best.
+          This is share post. I want to try the best.
+        </ion-card-content>
+      </ion-grid>
+    </ion-card>
+    <ion-row *ngFor="let item of items" style="margin: 5px">
+      <ion-icon style="margin-bottom: -6px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
+          ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>
+    <ion-item-divider color='black'></ion-item-divider>
+    <ion-row *ngFor="let item of items" style="padding-bottom: 2px;padding-top: 2px">
+      <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+        <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">Unlike</span>
+      </ion-col>
+      <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
+        <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span ion-text
+          color="darkgrey">Like</span>
+      </ion-col>
+      <ion-col text-center>
+        <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">Comment</span>
+      </ion-col>
+      <ion-col text-center>
+        <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">Share</span>
       </ion-col>
     </ion-row>
   </ion-card>
@@ -212,18 +291,18 @@
     </ion-row>
     <ion-item-divider color='black'></ion-item-divider>
     <ion-row *ngFor="let item of items" style="padding-bottom: 2px;padding-top: 2px">
-      <ion-col *ngIf="item.like" (click)="handleLike2(item)" text-center>
-        <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">&nbsp;Unlike</span>
+      <ion-col *ngIf="item.like" (click)="handleLike(item)" text-center>
+        <ion-icon name="md-thumbs-up" color="primary"></ion-icon><span ion-text color="primary">Unlike</span>
       </ion-col>
-      <ion-col *ngIf="!item.like" (click)="handleLike2(item)" text-center>
+      <ion-col *ngIf="!item.like" (click)="handleLike(item)" text-center>
         <ion-icon name="ios-thumbs-up-outline" color="darkgrey"></ion-icon><span ion-text
-          color="darkgrey">&nbsp;Like</span>
+          color="darkgrey">Like</span>
       </ion-col>
       <ion-col text-center>
-        <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Comment</span>
+        <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span class="text-style">Comment</span>
       </ion-col>
       <ion-col text-center>
-        <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">&nbsp;Share</span>
+        <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span class="text-style">Share</span>
       </ion-col>
     </ion-row>
   </ion-card>

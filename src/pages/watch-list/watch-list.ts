@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { SearchPage } from '../search/search';
 
 /**
  * Generated class for the WatchListPage page.
@@ -20,6 +21,9 @@ export class WatchListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WatchListPage');
+  }
+  search(){
+    this.navCtrl.push(SearchPage);
   }
 
 }
