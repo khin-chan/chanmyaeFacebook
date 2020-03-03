@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, normalizeURL, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 import { ProfilePage } from '../profile/profile';
@@ -37,7 +37,11 @@ export class SaveProfilePage {
   cp:any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toast: Toast, public sqlite: SQLite) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public toast: Toast, 
+              public sqlite: SQLite,
+              private events: Events) {
     this.img = navParams.get("image");
 
     if (this.img != null) {
@@ -93,7 +97,7 @@ export class SaveProfilePage {
     })
   }
 
-  savePhoto() {
+  savePhoto() {  
     if (this.checkImg==true) {
       this.sqlite.create({
         name: 'myIonicdb.db',
@@ -106,6 +110,9 @@ export class SaveProfilePage {
         db.executeSql('INSERT INTO myphoto VALUES(NULL,?)', [this.img])
           .then(res => {
             console.log(res);
+            console.log("Insert profile is work");
+
+            this.events.publish('save-profile', this.img);            
             // this.navCtrl.push(ProfilePage ,{savechangedata: this.savemychangedata})
 
             this.toast.show('Photo Saved', '5000', 'center').subscribe(
@@ -179,10 +186,7 @@ export class SaveProfilePage {
     }
 
   }
-  getCover(){
-    
-   
-         
+  getCover(){               
     this.sqlite.create({
       name: 'myIonicdb.db',
       location: 'default'

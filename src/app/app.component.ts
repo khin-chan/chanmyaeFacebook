@@ -22,7 +22,7 @@ export class MyApp {
       splashScreen.hide();
     });
 
-    this.statusBar.overlaysWebView(true);
+    this.statusBar.overlaysWebView(false);
     // this.statusBar.backgroundColorByHexString('#ffffff');
   }
 }

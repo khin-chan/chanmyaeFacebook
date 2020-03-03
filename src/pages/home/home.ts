@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, ActionSheetController, Modal, ModalController, ModalOptions } from 'ionic-angular';
+import { NavController, Platform, ActionSheetController, Modal, ModalController, ModalOptions, Events } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { GeoLocationPage } from '../geo-location/geo-location';
 import { CommentPage } from '../comment/comment';
@@ -19,12 +19,12 @@ export class HomePage {
             {image:'dbcolor1.jpg',  txt: 'Dar Dar'},
             {image:'baby6.png', txt: 'Tuu Tuu'}]
 
-  photos = [{image: 'girl4.png', txt: 'Ae Ae', subtxt: '3 mutual friends'},
+  photos = [{image: 'baby5.png', txt: 'Ae Ae', subtxt: '3 mutual friends'},
             {image: 'girl5.png', txt: 'Su Su', subtxt: '2 mutual friends'},
-            {image: 'girl6.png', txt: 'Co Co', subtxt: '1 mutual friend'},
-            {image: 'girl4.png', txt: 'Chi Chi', subtxt: '5 mutual friends'},
+            {image: 'baby2.png', txt: 'Co Co', subtxt: '1 mutual friend'},
+            {image: 'baby3.png', txt: 'Chi Chi', subtxt: '5 mutual friends'},
             {image: 'girl5.png', txt: 'Htet Het', subtxt: '4 mutual friends'},
-            {image: 'girl6.png', txt: 'Moe Moe', subtxt: '1 mutual friend'} ]
+            {image: 'baby7.png', txt: 'Moe Moe', subtxt: '1 mutual friend'} ]
 
   requests = ['Aye Aye', 'Mya Mya', 'Hla Hla', 'Khin Khin']
 
@@ -32,10 +32,20 @@ export class HomePage {
   items2 = [{id: 1, like: false}];
   items3 = [{id: 1, like: false}];
 
+  saveProfile = [];
+  changed = false;
+
   constructor(public platform: Platform,
     public navCtrl: NavController,
     public actionsheetCtrl: ActionSheetController,
-    private modal: ModalController) {
+    private modal: ModalController,
+    private events: Events) {
+      this.events.subscribe('save-profile', (savedProfile) =>{
+        console.log(JSON.stringify(savedProfile)); // 👋 Hello from page1!
+        this.saveProfile = [];
+        this.saveProfile = savedProfile;
+        this.changed = true;
+      });
       
   }
 

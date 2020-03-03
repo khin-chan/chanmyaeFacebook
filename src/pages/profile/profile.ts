@@ -1,5 +1,5 @@
-import { Component, PlatformRef } from '@angular/core';
-import { NavController, Platform, ActionSheetController, normalizeURL, NavParams } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, Platform, ActionSheetController, normalizeURL, NavParams, Events } from 'ionic-angular';
 //import { ImagePicker } from '@ionic-native/image-picker';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SaveProfilePage } from '../save-profile/save-profile';
@@ -36,10 +36,19 @@ export class ProfilePage {
 
 
   constructor(public navCtrl: NavController,
-    public camera: Camera,
-    public file: File, public actionsheetCtrl: ActionSheetController, public navParams: NavParams, public platform: Platform, public toast: Toast, public sqlite: SQLite) { //this.mychangeData=0;
-    //this.mychangeData=navParams.get("savechangedata");
-    // this.cover = navParams.get("CoverPt");
+              public camera: Camera,
+              public file: File, 
+              public actionsheetCtrl: ActionSheetController, 
+              public navParams: NavParams, 
+              public platform: Platform, 
+              public toast: Toast, 
+              public sqlite: SQLite,
+              private events: Events) {  
+                
+                this.events.subscribe('my-message', (data) =>{
+                console.log(data); // 👋 Hello from page1!
+              });
+          
 
   }
 
@@ -283,6 +292,8 @@ export class ProfilePage {
     console.log("currentPath == " + correctPath);
     this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
     this.changeData = true;
+
+   
   }
 
   private copyFileToLocalDir(namePath, currentName, newFileName) {
@@ -290,13 +301,10 @@ export class ProfilePage {
     console.log("namePaht == " + namePath + "   //// currentNmae == " + currentName + "   ////  newFileName == " + newFileName);
     console.log("this.file.datadirectory == " + this.file.dataDirectory);
     this.file.copyFile(namePath, currentName, this.file.dataDirectory, newFileName).then(success => {
-      // this.photos[0] = newFileName;
+     
       this.profile = this.pathForImage(newFileName);
-      //this.myProfile = this.webview.convertFileSrc(this.profile);
-      //this.myProfile = this.win.Ionic.WebView.convertFileSrc(this.profile);
-      // this.myProfile = window['Ionic']['WebView'].convertFileSrc(this.profile);
-      this.myProfile = normalizeURL(this.profile);
-      this.navCtrl.push(SaveProfilePage, { image: this.myProfile });
+     
+      this.navCtrl.push(SaveProfilePage, { image: this.profile });
 
       console.log("photos=" + JSON.stringify(this.profile));
       console.log("myProfiles=" + JSON.stringify(this.myProfile));
@@ -332,6 +340,8 @@ export class ProfilePage {
   }
 
   getData() {
+
+   
     this.sqlite.create({
       name: 'myIonicdb.db',
       location: 'default'

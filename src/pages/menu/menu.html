@@ -6,14 +6,19 @@
 -->
 
 <ion-content id="menu">
-  <ion-row no-padding style="margin-bottom: -5px; background-color:white;">
+  <ion-row no-padding style="margin-top: -10px; margin-bottom: -5px; background-color:white;">
     <ion-col>
-      <h2 style="margin-left: 10px">Menu</h2>
+      <h1 style="margin-left: 10px; font-weight: 400;">Menu</h1>
     </ion-col>
     <ion-col></ion-col>
-    <ion-col col-2 align-item-end style="margin-right: -15px;">
-      <ion-icon style="zoom: 1.5; margin-top: 12px" name="search" (click)="openSearch()"></ion-icon>
+    <ion-col col-2 align-item-end>
+      <ion-icon style="zoom: 1.8; margin-top: 10px" name="search" (click)="openSearch()"></ion-icon>
     </ion-col>
+    <!-- <ion-col align-item-end style="margin-top: 10px; ">
+      <button style="background-color: white;" (click)="search()" large>
+        <ion-icon name="search" style="zoom: 1.8;"></ion-icon>
+      </button>
+    </ion-col> -->
   </ion-row>
 
   <ion-list >

@@ -9,7 +9,7 @@
 <ion-content>
 
 
-
+<!-- 
   <ion-list>
     <ion-item-divider>
       <ion-label>Current Latitude: {{locationTracker.lat}}</ion-label>
@@ -23,17 +23,29 @@
     <ion-item-divider>
       <ion-label style="height: 40px;">Current timestamp: <br>{{locationTracker.timestamp}}</ion-label>
     </ion-item-divider>
-  </ion-list>
+  </ion-list> -->
+  <ion-row style="margin-left: 10px; margin-top:10px; margin-bottom: 10px; color:#2541B2">
+    Current Latitude: {{locationTracker.lat}}
+  </ion-row>
+  <ion-row style="margin-left: 10px; margin-top:10px; margin-bottom: 10px; color:#2541B2">
+    Current Longitude: {{locationTracker.lng}}
+  </ion-row>
+  <ion-row style="margin-left: 10px; margin-top:10px; margin-bottom: 10px; color:#2541B2">
+    Current Speed: {{locationTracker.speed}}
+  </ion-row>
+  <ion-row style="margin-left: 10px; margin-top:10px; margin-bottom: 10px; color:#2541B2">
+    Current timestamp: <br>{{locationTracker.timestamp}}
+  </ion-row>
 
   <ion-row>
     <ion-col>
-      <button ion-button class="trackBtn" color="fouth" style="margin-bottom: 12px;" block (click)="start()">
-        <h5 ion-text color="white" style="text-transform: none;">Start Tracking</h5>
+      <button ion-button class="trackBtn" color="Btn" block (click)="start()">
+        <p ion-text color="primary" style="text-transform: none;font-size: medium;">Start Tracking</p>
       </button>
-    </ion-col>
-    <ion-col>
-      <button ion-button class="trackBtn" color="fouth" style="margin-bottom: 12px;" block (click)="stop()">
-        <h5 ion-text color="white" style="text-transform: none;">Stop Tracking</h5>
+    </ion-col>   
+    <ion-col>     
+      <button ion-button class="trackBtn" color="Btn" block (click)="stop()">
+        <p ion-text color="primary" style="text-transform: none;font-size: medium;">Stop Tracking</p>
       </button>
     </ion-col>
   </ion-row>

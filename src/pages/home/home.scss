@@ -1,8 +1,6 @@
 page-home {
     #home{ 
-        .myborder{
-        //    width: 90px !important;
-        //    height: 60px !important;
+        .myborder{       
             border-radius: 50% !important;
             overflow: hidden !important;
             border-radius: 50%;
@@ -36,41 +34,23 @@ page-home {
             width:1px;
             height:25px;           
             background:rgb(212, 209, 209);           
-          }   
-        //  .mydayphoto{
-        //     padding-top: 5px; 
-        //     margin-right: -15px;
-        //     margin-left: -18px; 
-        //     // padding-left: 4%; 
-        //     // padding-right: 3%; 
-        //     // padding-top: 4%;
-        //     padding-left: 15px; 
-        //     padding-right: 15px; 
-        //     padding-top: 15px;
-        //  }     
-       .storySlide {            
-            padding-top: 10px; 
-            //margin-right: -15px;
-            //margin-left: -18px; 
-            padding-left: 5px; 
-           // padding-right: 15px; 
-           // padding-top: 4%;
-       }    
+          }             
+        .storySlide {            
+            padding-top: 10px;            
+            padding-left: 5px;            
+         }    
          .photos{
             height: 150px;
             width: 100%;           
             border-radius: 20px;
-            object-fit: cover;    
-            //padding-left: -5px;       
+            object-fit: cover;                    
         }
         .btnAdd{            
             position: absolute;            
             top: 10%;
             right: 43%;           
-            padding: 1px 4px 1px 4px;            
-            //background-color: primary;           
-            font-size: 18px;       
-           // cursor: pointer;
+            padding: 1px 4px 1px 4px;        
+            font-size: 18px;    
             border-radius: 50%;
             text-align: center;                 
             border:0.19em solid #03256C;            
@@ -91,9 +71,7 @@ page-home {
             margin-bottom: 12px;
             border-radius: 5px; 
             height: 30px;
-            width: 93%;
-           
-            
+            width: 93%;        
         }
         .icon{
             //margin-right:0.5em;
@@ -103,48 +81,23 @@ page-home {
         .avatarRow{
             margin-top: -15px;
             margin-left: -10px; 
-            margin-bottom: -10px; 
-            //margin-right: -5px;
+            margin-bottom: -10px;            
         }
         .requestImg{
-            height: 300px;
-            width: 100%;   
-            //margin: 0.5px;
-            object-fit: cover;
-           // border-radius: 10px;
-            
+            height: 250px;
+            width: 100%;              
+            object-fit: cover;      
         }
-        .imgSlide{
-            
-            //padding-top: 3%; 
+        .imgSlide{          
             padding-bottom: 3%; 
             padding-right: 5%; 
-            // margin-left: 5px;
-            // margin-right: 10px;
-           // margin-right: -15px;
-            
-           // background-attachment: fixed;
-           // background-color:black;
-           // border-radius: 50%;
-            //padding-right: 25px; 
-            //margin-top: -25px; 
-            //  margin-left: -25px; 
-            //  margin-right: -25px;
-        }
-        .imgCard{
-            border-radius: 20px; 
-            padding-right: -5%;
-            margin-right: -5px;
-            // margin-left: -5px; 
-           // margin-right: 10px !important;
-            //margin-bottom: -2px;
-           // margin-top: -2px;
-            //background-color: red;
-        }
+            border-radius: 30px;           
+        }       
         .cardTitle{
             text-transform: none;
             padding: 20px 15px 3px;
             text-align: end;
+            font-size: medium;
 
         }
         .findRequest{
@@ -190,9 +143,6 @@ page-home {
         }
         
     }
-// .icon-style{
-//         color:grey,
-//   }
-      
+   
 
         
