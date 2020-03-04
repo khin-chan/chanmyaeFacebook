@@ -92,15 +92,10 @@
       </ion-item>
     </ion-grid>
 
-    <ion-card-content style="margin: -21px 0px -15px -5px;">
-      Hello, I am glad to meet you. You are the best for me.This is card 1.
-      <!-- <ion-row *ngFor="let item of items1">
-        <ion-icon style="margin-left: -2px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
-            ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-      </ion-row> -->
+    <ion-card-content style="margin: -21px 0px -5px -5px;">
+      Hello, I am glad to meet you. You are the best for me.This is card 1.     
       <ion-row *ngFor="let item of items1">
-        <ion-icon style="margin-left: -4px;" *ngIf="item.like"
-          name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+        <ion-icon *ngIf="item.like" style="margin-left: -5px;" name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
     </ion-card-content>
 
@@ -117,10 +112,8 @@
         </button>
       </ion-col>      
       <ion-col no-padding (click)="openModal()">
-        <button class="btnRow" ion-button full clear no-margin>
-          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>
-          <!-- </ion-col> -->
+        <button class="btnRow" ion-button full clear no-margin>         
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>        
         </button>
       </ion-col>     
       <ion-col no-padding>
@@ -159,17 +152,11 @@
     </ion-grid>
 
     <ion-card-content style="margin: -21px 0px -15px -5px;">
-      Hello, I am glad to meet you. You are the best for me.This is card 1.
-      <!-- <ion-row *ngFor="let item of items1">
-        <ion-icon style="margin-left: -2px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
-            ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-      </ion-row> -->
+      Hello, I am glad to meet you. You are the best for me.This is card 1.     
       <ion-row *ngFor="let item of items1">
-        <ion-icon style="margin-left: -4px;" *ngIf="item.like"
-        name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+        <ion-icon style="margin-left: -5px;" *ngIf="item.like" name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
     </ion-card-content>
-
     <hr>
     <ion-row *ngFor="let item of items1">
       <ion-col *ngIf="item.like" (click)="handleLike1(item)" no-padding>
@@ -183,10 +170,8 @@
         </button>
       </ion-col>      
       <ion-col no-padding (click)="openModal()">
-        <button class="btnRow" ion-button full clear no-margin>
-          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>
-          <!-- </ion-col> -->
+        <button class="btnRow" ion-button full clear no-margin>        
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>        
         </button>
       </ion-col>     
       <ion-col no-padding>
@@ -255,16 +240,10 @@
           This is share post. I want to try the best.
         </ion-card-content>
       </ion-grid>
-    </ion-card>
-    <!-- <ion-row *ngFor="let item of items2">
-       <ion-icon style="margin-left: 7px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
-          ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-    </ion-row>  -->
+    </ion-card>  
     <ion-row *ngFor="let item of items2">
-      <ion-icon style="margin-left: 5px;" *ngIf="item.like"
-      name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-    </ion-row>
-    <!-- <ion-item-divider color='black'></ion-item-divider> -->
+      <ion-icon *ngIf="item.like" style="padding-left: 10px;" name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>   
     <hr>
     <ion-row *ngFor="let item of items2">
       <ion-col *ngIf="item.like" (click)="handleLike2(item)" no-padding>
@@ -278,10 +257,8 @@
         </button>
       </ion-col>      
       <ion-col no-padding (click)="openModal()">
-        <button class="btnRow" ion-button full clear no-margin>
-          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>
-          <!-- </ion-col> -->
+        <button class="btnRow" ion-button full clear no-margin>         
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>         
         </button>
       </ion-col>     
       <ion-col no-padding>
@@ -350,14 +327,9 @@
           This is share post. I want to try the best.
         </ion-card-content>
       </ion-grid>
-    </ion-card>
-    <!-- <ion-row *ngFor="let item of items2">
-       <ion-icon style="margin-left: 7px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
-          ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-    </ion-row>  -->
+    </ion-card>   
     <ion-row *ngFor="let item of items2">
-      <ion-icon style="margin-left: 5px;" *ngIf="item.like"
-      name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+      <ion-icon *ngIf="item.like" style="padding-left: 10px;" name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
     </ion-row>
     <hr>
     <ion-row *ngFor="let item of items1">
@@ -412,13 +384,13 @@
             <ion-row>
               <ion-col>
                 <button class="confirmBtn" ion-button block>
-                  <h5 class="text-style" ion-text color="white">
+                  <h5 style="text-transform: none;" ion-text color="white">
                     Confirm </h5>
                 </button>
               </ion-col>
               <ion-col>
                 <button class="deleteBtn" ion-button block>
-                  <h5 class="text-style" ion-text color="dark">
+                  <h5 style="text-transform: none;" ion-text color="dark">
                     Delete</h5></button>
               </ion-col>
             </ion-row>
@@ -427,10 +399,7 @@
       </ion-slide>
     </ion-slides>
     <h6 ion-text style="text-align: center; margin-top: 5px; margin-bottom: 10px;font-weight: bold;" color="darkgrey">See All</h6>
-
-
   </ion-card>
-
   <ion-card ion-card class="cardMarginTop" *ngIf="checkImg==false">
     <ion-grid class="avatarRow">
       <ion-item>
@@ -487,14 +456,9 @@
           This is share post. I want to try the best.
         </ion-card-content>
       </ion-grid>
-    </ion-card>
-    <!-- <ion-row *ngFor="let item of items3">
-      <ion-icon style="margin-left: 7px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
-          ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-    </ion-row>  -->
+    </ion-card>   
     <ion-row *ngFor="let item of items3">
-      <ion-icon style="margin-left: 5px;" *ngIf="item.like"
-      name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+      <ion-icon style="padding-left: 10px;" *ngIf="item.like" name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
     </ion-row>
     <hr>
     <ion-row *ngFor="let item of items3">
@@ -509,10 +473,8 @@
         </button>
       </ion-col>      
       <ion-col no-padding (click)="openModal()">
-        <button class="btnRow" ion-button full clear no-margin>
-          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>
-          <!-- </ion-col> -->
+        <button class="btnRow" ion-button full clear no-margin>         
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>        
         </button>
       </ion-col>     
       <ion-col no-padding>
@@ -581,16 +543,10 @@
           This is share post. I want to try the best.
         </ion-card-content>
       </ion-grid>
-    </ion-card>
-    <!-- <ion-row *ngFor="let item of items3">
-      <ion-icon style="margin-left: 7px; margin-bottom: -3px;" *ngIf="item.like" name="ios-thumbs-up-outline" color="primary"><span
-          ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-    </ion-row>  -->
+    </ion-card>   
     <ion-row *ngFor="let item of items3">
-      <ion-icon style="margin-left: 5px;" *ngIf="item.like"
-      name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-    </ion-row>
-    <!-- <ion-item-divider color='black'></ion-item-divider> -->
+      <ion-icon style="padding-left: 10px;" *ngIf="item.like" name="md-thumbs-up"  color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>   
     <hr>
     <ion-row *ngFor="let item of items3">
       <ion-col *ngIf="item.like" (click)="handleLike3(item)" no-padding>
@@ -604,10 +560,8 @@
         </button>
       </ion-col>      
       <ion-col no-padding (click)="openModal()">
-        <button class="btnRow" ion-button full clear no-margin>
-          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>
-          <!-- </ion-col> -->
+        <button class="btnRow" ion-button full clear no-margin>          
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text color="darkgrey">Comment</span>         
         </button>
       </ion-col>     
       <ion-col no-padding>

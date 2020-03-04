@@ -3,9 +3,7 @@ page-profile {
       width:195%;
       float:left;
       border-radius:7px;
-      margin-left: -9px;
-      
-      
+      margin-left: -9px;          
 
    }
    
@@ -22,8 +20,7 @@ page-profile {
   //     background-color:  #ffb3b3;}
 
   .container {
-       position:relative;
-       
+       position:relative;       
        
      }
      
@@ -79,14 +76,22 @@ page-profile {
      background-color: #d9d9d9;
      color:black;
    }
-   .btn{
+   .editBtn{
      width:99%;
-     height:36px !important;
-     margin-top:20px;
-     
-     
-     border-radius: 7px;
+     height:34px !important;
+     margin-top:20px;    
+     margin-bottom: 12px;
+     border-radius: 5px;     
+         
    }
+   .seeBtn{
+    width:99%;
+    height:34px !important;
+    margin-top:20px;  
+    margin-bottom: 12px;
+    border-radius: 5px;    
+        
+  }
    .resize {
     height: 100px;
     /* width: 100%; */
@@ -105,5 +110,5 @@ page-profile {
     padding: 5px;
     align-items: center;
 }
-   
+
 }

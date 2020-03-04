@@ -62,10 +62,11 @@
           her name's Meow Meow and she's taking the world by storm
         </p>
         <img src="assets/imgs/giphy.gif"/>    
-      <ion-row *ngFor="let item of items1">
-        <ion-icon style="margin-left: -2px; margin-bottom: -3px; margin-top: 10px;" *ngIf="item.like"
-          name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-      </ion-row>
+        <ion-row *ngFor="let item of items1">
+          <ion-icon style="margin: 5px 0px -10px -5px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+            <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+        </ion-row>
+  
     </ion-card-content>
 
     <hr>
@@ -139,10 +140,11 @@
         </p>
         <img src="assets/imgs/football.gif" />             
  
-      <ion-row *ngFor="let item of items2">
-        <ion-icon style="margin-left: -2px; margin-bottom: -3px; margin-top: 10px;" *ngIf="item.like"
-          name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-      </ion-row>
+        <ion-row *ngFor="let item of items2">
+          <ion-icon style="margin: 5px 0px -10px -5px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+            <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+        </ion-row>
+  
     </ion-card-content>
 
     <hr>
@@ -212,12 +214,13 @@
           Welcome to FC Barcelona's official YouTube channel! Highlights, challenges, interviews, vlogs, live shows and
           much more Turn your notifications on and...
         </p>
-        <img src="assets/imgs/football1.gif" />                
-      </ion-card-content>
-      <ion-row *ngFor="let item of items3">
-        <ion-icon style="padding-left: 15px;" *ngIf="item.like"
-          name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-      </ion-row>  
+        <img src="assets/imgs/football1.gif" />  
+        <ion-row *ngFor="let item of items3">
+          <ion-icon style="margin: 5px 0px -10px -5px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+            <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+        </ion-row>              
+      </ion-card-content>     
+
     <hr>
     <ion-row *ngFor="let item of items3">
       <ion-col *ngIf="item.like" (click)="handleLike3(item)" no-padding>
