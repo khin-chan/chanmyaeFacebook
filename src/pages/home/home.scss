@@ -29,6 +29,7 @@ page-home {
          .btnRow{
             max-height: 30px;           
             padding-bottom: 9px;
+            text-transform: none;
          }
          .verticalLine {
             width:1px;
@@ -137,7 +138,13 @@ page-home {
         
           .text-style{
             text-transform: none;
+            color: black;
              }
+          .like-style{
+            text-transform: none;
+            color: grey;
+            }      
+             
          
     
         }
