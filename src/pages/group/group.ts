@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController, Modal, ModalController, ModalOptions } from 'ionic-angular';
 import { SearchPage } from '../search/search';
-
+import { CommentPage } from '../comment/comment';
 
 /**
  * Generated class for the GroupPage page.
@@ -44,8 +44,12 @@ export class GroupPage {
   items1 = [{ id: 1, like: false }];
   items2 = [{ id: 1, like: false }];
 
+
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public actionSheetCtrl: ActionSheetController) {      
+    public actionSheetCtrl: ActionSheetController,
+    private modal: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -110,15 +114,40 @@ export class GroupPage {
     this.navCtrl.push(SearchPage);
   }
 
-  handleLike1(item){
-    console.log("Click Like 1 => ");      
-    item.like = !item.like;
-  }
-  handleLike2(item){
-    console.log("Click Like 2=> ");      
-    item.like = !item.like;
-  }
+  handleLike1(item) {
+    console.log("Click Like  1=> ");
 
+    item.like = !item.like;
+  }
+  handleLike2(item) {
+    console.log("Click Like  2=> ");
+
+    item.like = !item.like;
+  }
+  openModal(){
+
+    const myModalOptions: ModalOptions = {
+      enableBackdropDismiss: false
+    };
+    const myData = {
+      name: 'Chan Myae Home',
+      role: 'Developer'
+    };
+    const myModal : Modal = this.modal.create(CommentPage, { data: myData}, myModalOptions);
+    myModal.present();
+
+    myModal.onDidDismiss((data)=>{
+      console.log("I'm about Dimissed");
+      console.log(data);
+    })
+
+    myModal.onWillDismiss((data) => {
+      console.log("I'm about to dismiss");
+      console.log(data);
+    })
+
+    console.log("My Comment Modal");
+  }
 
 }
 

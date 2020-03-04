@@ -32,19 +32,23 @@ export class HomePage {
   items2 = [{id: 1, like: false}];
   items3 = [{id: 1, like: false}];
 
-  saveProfile = [];
-  changed = false;
+  
+  subscribedImg1:any=[];
+  checkImg:boolean=false;
+
 
   constructor(public platform: Platform,
     public navCtrl: NavController,
     public actionsheetCtrl: ActionSheetController,
     private modal: ModalController,
-    private events: Events) {
-      this.events.subscribe('save-profile', (savedProfile) =>{
-        console.log(JSON.stringify(savedProfile)); // 👋 Hello from page1!
-        this.saveProfile = [];
-        this.saveProfile = savedProfile;
-        this.changed = true;
+    public events:Events) {
+      events.subscribe('publishedImg', (subscribedImg) => {
+        this.subscribedImg1=[];
+        this.subscribedImg1=subscribedImg;
+        console.log("Subscribed Image is=>"+this.subscribedImg1)
+        // user and time are the same arguments passed in `events.publish(user, time)`
+        this.checkImg=true;
+        console.log("check for subscribed Image is"+this.checkImg)
       });
       
   }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, ActionSheetController, normalizeURL, NavParams, Events } from 'ionic-angular';
-//import { ImagePicker } from '@ionic-native/image-picker';
+import { NavController, Platform, ActionSheetController, normalizeURL, NavParams,Events, Modal, ModalController, ModalOptions} from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SaveProfilePage } from '../save-profile/save-profile';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
@@ -8,6 +7,7 @@ import { Toast } from '@ionic-native/toast';
 import { File } from '@ionic-native/file';
 import { ShowUploadImgPage } from '../show-upload-img/show-upload-img';
 import { SaveCpPage } from '../save-cp/save-cp';
+import { CommentPage } from '../comment/comment';
 
 // /**
 
@@ -34,21 +34,38 @@ export class ProfilePage {
   cover: any;
   checkCover: boolean = false;
 
+  items1 = [{ id: 1, like: false }];
+  items2 = [{ id: 1, like: false }];
+  items3 = [{ id: 1, like: false }];
+  items4 = [{ id: 1, like: false }];
+  items5 = [{ id: 1, like: false }];
+  imgs: string;
+  tet: string;
+  Datas = [
+    {imgs: 'people1.jpg', tet: 'Chow Lwin'},
+    {imgs:'people2.jpg', tet:'Kay Kay'},
+    {imgs: 'people3.jpg', tet: 'Chan Myae Han'}
+  ];
+
+  imgs1: string;
+  tet1: string;
+  Datas1 = [
+    {imgs1: 'people4.jpg', tet1: 'Kine Myae'},
+    {imgs1:'people5.jpg', tet1:'Zin Mar Nwe'},
+    {imgs1: 'cat1.jpg', tet1: 'May Zan'}
+  ];
+
+
+
+
 
   constructor(public navCtrl: NavController,
-              public camera: Camera,
-              public file: File, 
-              public actionsheetCtrl: ActionSheetController, 
-              public navParams: NavParams, 
-              public platform: Platform, 
-              public toast: Toast, 
-              public sqlite: SQLite,
-              private events: Events) {  
-                
-                this.events.subscribe('my-message', (data) =>{
-                console.log(data); // 👋 Hello from page1!
-              });
-          
+    public camera: Camera,
+    public file: File, public actionsheetCtrl: ActionSheetController, public navParams: NavParams, public platform: Platform, public toast: Toast, public sqlite: SQLite,
+    public events:Events,
+    private modal: ModalController) { //this.mychangeData=0;
+    //this.mychangeData=navParams.get("savechangedata");
+    // this.cover = navParams.get("CoverPt");
 
   }
 
@@ -292,8 +309,6 @@ export class ProfilePage {
     console.log("currentPath == " + correctPath);
     this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
     this.changeData = true;
-
-   
   }
 
   private copyFileToLocalDir(namePath, currentName, newFileName) {
@@ -301,10 +316,13 @@ export class ProfilePage {
     console.log("namePaht == " + namePath + "   //// currentNmae == " + currentName + "   ////  newFileName == " + newFileName);
     console.log("this.file.datadirectory == " + this.file.dataDirectory);
     this.file.copyFile(namePath, currentName, this.file.dataDirectory, newFileName).then(success => {
-     
+      // this.photos[0] = newFileName;
       this.profile = this.pathForImage(newFileName);
-     
-      this.navCtrl.push(SaveProfilePage, { image: this.profile });
+      //this.myProfile = this.webview.convertFileSrc(this.profile);
+      //this.myProfile = this.win.Ionic.WebView.convertFileSrc(this.profile);
+      // this.myProfile = window['Ionic']['WebView'].convertFileSrc(this.profile);
+      this.myProfile = normalizeURL(this.profile);
+      this.navCtrl.push(SaveProfilePage, { image: this.myProfile });
 
       console.log("photos=" + JSON.stringify(this.profile));
       console.log("myProfiles=" + JSON.stringify(this.myProfile));
@@ -340,8 +358,6 @@ export class ProfilePage {
   }
 
   getData() {
-
-   
     this.sqlite.create({
       name: 'myIonicdb.db',
       location: 'default'
@@ -358,9 +374,12 @@ export class ProfilePage {
             // this.myimage = normalizeURL(this.myimg)
             this.changedPP.push({ imgid: res.rows.item(i).imgid, img: res.rows.item(i).img })
             console.log("My photo only one => " + this.changedPP);
+           
             // console.log("My change data is whether 0 or 1 ===> "+this.mychangeData);
             //this.mychangeData = this.mychangeData;
           }
+          this.events.publish('publishedImg',this.changedPP);
+          
         }).catch(e => console.log(e));
     })
   }
@@ -530,6 +549,57 @@ export class ProfilePage {
       })
     })
 
+  }
+  handleLike1(item) {
+    console.log("Click Like  1=> ");
+
+    item.like = !item.like;
+  }
+  handleLike2(item) {
+    console.log("Click Like  2=> ");
+
+    item.like = !item.like;
+  }
+
+  handleLike3(item) {
+    console.log("Click Like  3=> ");
+
+    item.like = !item.like;
+  }
+  handleLike4(item) {
+    console.log("Click Like  4=> ");
+
+    item.like = !item.like;
+  }
+
+  handleLike5(item) {
+    console.log("Click Like  5=> ");
+
+    item.like = !item.like;
+  }
+  openModal(){
+
+    const myModalOptions: ModalOptions = {
+      enableBackdropDismiss: false
+    };
+    const myData = {
+      name: 'Chan Myae Home',
+      role: 'Developer'
+    };
+    const myModal : Modal = this.modal.create(CommentPage, { data: myData}, myModalOptions);
+    myModal.present();
+
+    myModal.onDidDismiss((data)=>{
+      console.log("I'm about Dimissed");
+      console.log(data);
+    })
+
+    myModal.onWillDismiss((data) => {
+      console.log("I'm about to dismiss");
+      console.log(data);
+    })
+
+    console.log("My Comment Modal");
   }
 }
 
