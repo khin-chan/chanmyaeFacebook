@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, PlatformRef } from '@angular/core';
 import { NavController, Platform, ActionSheetController, normalizeURL, NavParams,Events, Modal, ModalController, ModalOptions} from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SaveProfilePage } from '../save-profile/save-profile';
@@ -8,6 +8,8 @@ import { File } from '@ionic-native/file';
 import { ShowUploadImgPage } from '../show-upload-img/show-upload-img';
 import { SaveCpPage } from '../save-cp/save-cp';
 import { CommentPage } from '../comment/comment';
+import { ViewphotoPage } from '../viewphoto/viewphoto';
+import { ViewcoverPage } from '../viewcover/viewcover';
 
 // /**
 
@@ -33,6 +35,7 @@ export class ProfilePage {
   changedCP: any = [];
   cover: any;
   checkCover: boolean = false;
+  viewPP:any=[];
 
   items1 = [{ id: 1, like: false }];
   items2 = [{ id: 1, like: false }];
@@ -63,7 +66,8 @@ export class ProfilePage {
     public camera: Camera,
     public file: File, public actionsheetCtrl: ActionSheetController, public navParams: NavParams, public platform: Platform, public toast: Toast, public sqlite: SQLite,
     public events:Events,
-    private modal: ModalController) { //this.mychangeData=0;
+    private modal: ModalController
+) { //this.mychangeData=0;
     //this.mychangeData=navParams.get("savechangedata");
     // this.cover = navParams.get("CoverPt");
 
@@ -137,6 +141,7 @@ export class ProfilePage {
           role: 'destructive',
           icon: !this.platform.is('ios') ? 'ios-image-outline' : null,
           handler: () => {
+            this.viewCover();
             console.log('Delete clicked');
           }
         },
@@ -187,6 +192,7 @@ export class ProfilePage {
           role: 'destructive',
           icon: !this.platform.is('ios') ? 'ios-image-outline' : null,
           handler: () => {
+            this.viewPhoto();
             console.log('Delete clicked');
           }
         },
@@ -601,7 +607,17 @@ export class ProfilePage {
 
     console.log("My Comment Modal");
   }
-}
+  viewPhoto(){
+    
+    this.navCtrl.push(ViewphotoPage);}
+  
+    viewCover(){
+      this.navCtrl.push(ViewcoverPage);
+    }
+  }
+  
+
+
 
 // this.navCtrl.push(ProfilePage ,{savechangedata: this.savemychangedata})
 

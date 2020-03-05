@@ -63,7 +63,7 @@
         </p>
         <img src="assets/imgs/giphy.gif"/>    
         <ion-row *ngFor="let item of items1">
-          <ion-icon style="margin: 5px 0px -10px -5px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+          <ion-icon style="margin: 10px 0px -10px 0px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
             <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
         </ion-row>
   
@@ -73,28 +73,28 @@
     <ion-row *ngFor="let item of items1">
       <ion-col *ngIf="item.like" (click)="handleLike1(item)" no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-            color="primary">Unlike</span>
+          <ion-icon style="padding-bottom: 3px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
         </button>
       </ion-col>
       <ion-col *ngIf="!item.like" (click)="handleLike1(item)" no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Like</span>
+          <ion-icon style="padding-bottom: 3px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
         </button>
       </ion-col>
       <ion-col no-padding (click)="openModal()">
         <button class="btnRow" ion-button full clear no-margin>
           <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Comment</span>
+          <ion-icon style="padding-bottom: 2px;" name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
           <!-- </ion-col> -->
         </button>
       </ion-col>
       <ion-col no-padding>
         <button class="btnRow" ion-button full clear no-margin>
           <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Share</span>
+            color="darkgrey">&nbsp;Share</span>
         </button>
       </ion-col>
     </ion-row>
@@ -141,7 +141,7 @@
         <img src="assets/imgs/football.gif" />             
  
         <ion-row *ngFor="let item of items2">
-          <ion-icon style="margin: 5px 0px -10px -5px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+          <ion-icon style="margin: 10px 0px -10px 0px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
             <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
         </ion-row>
   
@@ -151,28 +151,28 @@
     <ion-row *ngFor="let item of items2">
       <ion-col *ngIf="item.like" (click)="handleLike2(item)" no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-            color="primary">Unlike</span>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
         </button>
       </ion-col>
       <ion-col *ngIf="!item.like" (click)="handleLike2(item)" no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Like</span>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
         </button>
       </ion-col>
       <ion-col no-padding (click)="openModal()">
         <button class="btnRow" ion-button full clear no-margin>
           <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
           <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Comment</span>
+            color="darkgrey">&nbsp;Comment</span>
           <!-- </ion-col> -->
         </button>
       </ion-col>
       <ion-col no-padding>
         <button class="btnRow" ion-button full clear no-margin>
           <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Share</span>
+            color="darkgrey">&nbsp;Share</span>
         </button>
       </ion-col>
     </ion-row>
@@ -216,7 +216,7 @@
         </p>
         <img src="assets/imgs/football1.gif" />  
         <ion-row *ngFor="let item of items3">
-          <ion-icon style="margin: 5px 0px -10px -5px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+          <ion-icon style="margin: 10px 0px -10px 0px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
             <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
         </ion-row>              
       </ion-card-content>     
@@ -225,28 +225,28 @@
     <ion-row *ngFor="let item of items3">
       <ion-col *ngIf="item.like" (click)="handleLike3(item)" no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-            color="primary">Unlike</span>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
         </button>
       </ion-col>
       <ion-col *ngIf="!item.like" (click)="handleLike3(item)" no-padding>
         <button class="btnRow" ion-button full clear no-margin>
-          <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Like</span>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
         </button>
       </ion-col>
       <ion-col no-padding (click)="openModal()">
         <button class="btnRow" ion-button full clear no-margin>
           <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Comment</span>
+          <ion-icon style="padding-bottom: 3px;" name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
           <!-- </ion-col> -->
         </button>
       </ion-col>
       <ion-col no-padding>
         <button class="btnRow" ion-button full clear no-margin>
           <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-            color="darkgrey">Share</span>
+            color="darkgrey">&nbsp;Share</span>
         </button>
       </ion-col>
     </ion-row>

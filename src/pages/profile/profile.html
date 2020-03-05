@@ -1,756 +1,835 @@
-
-
 <ion-header style="background-color:white;height:60px;">
   <ion-grid>
     <ion-row>
       <ion-col></ion-col>
-      <ion-col><h5 style="font-weight: bolder;margin-top:15px;">&nbsp;Saw Waddy</h5></ion-col>
-      <ion-col><ion-item text-right><ion-icon name="contact" style="zoom:1.2;margin-top:-2px;"></ion-icon></ion-item></ion-col>
+      <ion-col>
+        <h5 style="font-weight: bolder;margin-top:15px;">&nbsp;Saw Waddy</h5>
+      </ion-col>
+      <ion-col>
+        <ion-item text-right>
+          <ion-icon name="contact" style="zoom:1.2;margin-top:-2px;"></ion-icon>
+        </ion-item>
+      </ion-col>
     </ion-row>
-    
+
   </ion-grid>
 </ion-header>
 
 <ion-content style="background-color: #d9d9d9;">
- 
-  
 
-   <ion-card style="margin-top: -10px;">
-    
+
+
+  <ion-card style="margin-top: -10px;">
+
     <ion-item *ngIf="changedPP.length>0 && checkCover==false">
       <div style="position: relative; left: 0; top: 0;" *ngFor="let savephoto of changedPP">
-        <img src="assets/imgs/scenery1.jpeg" class="fishes" (click)="coverPhoto()"/>       
+        <img src="assets/imgs/scenery1.jpeg" class="fishes" (click)="coverPhoto()" />
         <img src="{{savephoto.img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
-        <button  class="cam" (click)="coverPhoto()"><ion-icon name="camera" color="black"></ion-icon></button>
-       </div><br><br><br><br><br>
-  <h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      <button ion-button class="addStory" block><ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span style="text-transform:none!important;font-size: medium;">Add Story</span></button>
-    </ion-col>
-    <ion-col>
-      <button  ion-button class="more" color="light" block ><ion-icon name="ios-more"></ion-icon></button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-</ion-item>
+        <button class="cam" (click)="coverPhoto()">
+          <ion-icon name="camera" color="black"></ion-icon>
+        </button>
+      </div><br><br><br><br><br>
+      <h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button class="addStory" block>
+              <ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span
+                style="text-transform:none!important;font-size: medium;">Add Story</span>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button class="more" color="seeAllBtn" block>
+              <ion-icon name="ios-more"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
 
-<ion-item *ngIf="changedPP.length>0 && checkCover==true">
-  <div style="position: relative; left: 0; top: 0;" *ngFor="let savephoto of changedPP">
-    <img src="{{cover}}" class="fishes" (click)="coverPhoto()"/>       
-    <img src="{{savephoto.img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
-    <button  class="cam" (click)="coverPhoto()"><ion-icon name="camera" color="black"></ion-icon></button>
-   </div><br><br><br><br><br>
-<h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
-<ion-grid>
-<ion-row>
-<ion-col>
-  <button ion-button class="addStory" block><ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span style="text-transform:none!important;font-size: medium;">Add Story</span></button>
-</ion-col>
-<ion-col>
-  <button  ion-button class="more" color="light" block ><ion-icon name="ios-more"></ion-icon></button>
-</ion-col>
-</ion-row>
-</ion-grid>
-</ion-item>
+    <ion-item *ngIf="changedPP.length>0 && checkCover==true">
+      <div style="position: relative; left: 0; top: 0;" *ngFor="let savephoto of changedPP">
+        <img src="{{cover}}" class="fishes" (click)="coverPhoto()" />
+        <img src="{{savephoto.img}}" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
+        <button class="cam" (click)="coverPhoto()">
+          <ion-icon name="camera" color="black"></ion-icon>
+        </button>
+      </div><br><br><br><br><br>
+      <h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button class="addStory" block>
+              <ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span
+                style="text-transform:none!important;font-size: medium;">Add Story</span>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button class="more" color="light" block>
+              <ion-icon name="ios-more"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
 
-<ion-item *ngIf="changedPP.length==0 && checkCover==false">
-  <div style="position: relative; left: 0; top: 0;" >
-    <img src="assets/imgs/scenery1.jpeg" class="fishes" (click)="coverPhoto()"/>       
-    <img src="assets/imgs/profile.png" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
-    <button  class="cam" (click)="coverPhoto()"><ion-icon name="camera" color="black"></ion-icon></button>
-   </div><br><br><br><br><br>
-<h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
-<ion-grid>
-<ion-row>
-<ion-col>
-  <button ion-button class="addStory" block><ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span style="text-transform:none!important;font-size: medium;">Add Story</span></button>
-</ion-col>
-<ion-col>
-  <button  ion-button class="more" color="light" block ><ion-icon name="ios-more"></ion-icon></button>
-</ion-col>
-</ion-row>
-</ion-grid>
-</ion-item>
+    <ion-item *ngIf="changedPP.length==0 && checkCover==false">
+      <div style="position: relative; left: 0; top: 0;">
+        <img src="assets/imgs/scenery1.jpeg" class="fishes" (click)="coverPhoto()" />
+        <img src="assets/imgs/profile.png" (click)="uploadImg()" class="fish"
+          onError="this.src='assets/imgs/profile.png'">
+        <button class="cam" (click)="coverPhoto()">
+          <ion-icon name="camera" color="black"></ion-icon>
+        </button>
+      </div><br><br><br><br><br>
+      <h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button class="addStory" block>
+              <ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span
+                style="text-transform:none!important;font-size: medium;">Add Story</span>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button class="more" color="light" block>
+              <ion-icon name="ios-more"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
 
-<ion-item *ngIf="changedPP.length==0 && checkCover==true">
-  <div style="position: relative; left: 0; top: 0;" >
-    <img src="{{cover}}" class="fishes" (click)="coverPhoto()"/>
-    <img src="assets/imgs/profile.png" (click)="uploadImg()" class="fish" onError="this.src='assets/imgs/profile.png'">
-    <button  class="cam" (click)="coverPhoto()"><ion-icon name="camera" color="black"></ion-icon></button>
-   </div><br><br><br><br><br>
-<h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
-<ion-grid>
-<ion-row>
-<ion-col>
-  <button ion-button class="addStory" block><ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span style="text-transform:none!important;font-size: medium;">Add Story</span></button>
-</ion-col>
-<ion-col>
-  <button  ion-button class="more" color="light" block ><ion-icon name="ios-more"></ion-icon></button>
-</ion-col>
-</ion-row>
-</ion-grid>
-</ion-item>
+    <ion-item *ngIf="changedPP.length==0 && checkCover==true">
+      <div style="position: relative; left: 0; top: 0;">
+        <img src="{{cover}}" class="fishes" (click)="coverPhoto()" />
+        <img src="assets/imgs/profile.png" (click)="uploadImg()" class="fish"
+          onError="this.src='assets/imgs/profile.png'">
+        <button class="cam" (click)="coverPhoto()">
+          <ion-icon name="camera" color="black"></ion-icon>
+        </button>
+      </div><br><br><br><br><br>
+      <h1 style="font-weight: bolder;text-align: center;">Saw Waddy</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button class="addStory" block>
+              <ion-icon name="camera"></ion-icon>&nbsp;&nbsp;<span
+                style="text-transform:none!important;font-size: medium;">Add Story</span>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button class="more" color="light" block>
+              <ion-icon name="ios-more"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
 
-   <ion-list>
-  <ion-item>
+    <ion-list>
+      <ion-item>
 
-    <ion-icon name="school"></ion-icon>&nbsp;&nbsp;
-    Went to B.E.H.S(2) Bahan 
-    <br><br>
-    <ion-icon name="home" full></ion-icon>&nbsp;&nbsp;
-    Lives in Yangon
-    <br><br>
-    <ion-icon name="pin"></ion-icon>&nbsp;&nbsp;&nbsp;
-    From Yangon, Myanmar
-    <br><br>
-    <ion-icon name="ios-more"></ion-icon>&nbsp;&nbsp;&nbsp;
-    See your About info
-    <br><br>
-    <img src="assets/imgs/feature.jpeg" style="border-radius:6px;">
+        <ion-icon name="school"></ion-icon>&nbsp;&nbsp;
+        Went to B.E.H.S(2) Bahan
+        <br><br>
+        <ion-icon name="home" full></ion-icon>&nbsp;&nbsp;
+        Lives in Yangon
+        <br><br>
+        <ion-icon name="pin"></ion-icon>&nbsp;&nbsp;&nbsp;
+        From Yangon, Myanmar
+        <br><br>
+        <ion-icon name="ios-more"></ion-icon>&nbsp;&nbsp;&nbsp;
+        See your About info
+        <br><br>
+        <img src="assets/imgs/feature.jpeg" style="border-radius:6px;">
+        <button ion-button class="editBtn" color="Btn" block>
+          <p ion-text color="primary" style="text-transform: none;font-size: medium;">Edit Public Details</p>
+        </button>
+      </ion-item>
+    </ion-list>
+    <hr style="margin-top:2px;">
+    <ion-item>
+      <ion-grid style="margin-top:-13px;">
+        <ion-row>
+          <ion-col style="margin-left:-9px"><p ion-text style="font-weight: bolder;font-size: large;" color="dark">Friends</p></ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col style="margin-right:-10px"><p ion-text color="primary" style="font-size: medium;">Find Friends</p></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="margin-left:-9px;margin-top: -10px;">2,316 friends</ion-col>
+        </ion-row>
+      </ion-grid>
 
-   
-    <button ion-button class="editBtn" color="Btn" block>
-      <p ion-text color="primary" style="text-transform: none;font-size: medium;">Edit Public Details</p>
-    </button>
-    <!-- <button ion-button class="btn" style="background-color:#ffd9b3;font-size:medium;color:black;"><span style="text-transform:none!important;color:#ff8000">&nbsp;Edit Public Details</span></button>   -->
-  </ion-item>
-  </ion-list>
-  <hr style="margin-top:2px;">
-  <ion-item >
-  <ion-grid style="margin-top:-13px;">
-    <ion-row>
-      <ion-col style="margin-left:-9px"><h1 style="font-weight: bolder;">Friends</h1></ion-col>
-      <ion-col></ion-col>
-      <ion-col></ion-col>
-      <ion-col style="margin-right:-10px"><p ion-text color="primary" style="font-size: medium;">Find Friends</p></ion-col>
-    </ion-row>
-  
-    <ion-row>
-      <ion-col style="margin-left:-9px;margin-top: -10px;">2,316 friends</ion-col>
-    </ion-row>
-  </ion-grid>
-  
-  <div class="container">
-  <ion-grid style="background-color:#e6e6e6">
-    <ion-row>
-      <ion-col *ngFor="let data of Datas">
-        <img src="assets/imgs/{{data.imgs}}" class="photos" style="border-radius: 10px;height: 110px;width: 100px;" imageViewer/>
-     
-    
-        <p style="text-align: left;font-size: 12px;">{{data.tet}}</p>
-      </ion-col>
-    </ion-row>
+      <div class="container">
+        <ion-grid style="background-color:#e6e6e6">
+          <ion-row>
+            <ion-col *ngFor="let data of Datas">
+
+              <img src="assets/imgs/{{data.imgs}}" class="photos" style="border-radius: 5px;height: 110px;width: 100px;"
+                imageViewer />
+
+
+              <p style="text-align: left;font-size: 12px;">{{data.tet}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let data of Datas1">
+              <img src="assets/imgs/{{data.imgs1}}" class="photos"
+                style="border-radius: 5px;height: 110px;width: 100px;" imageViewer />
+
+
+              <p style="text-align: left;font-size: 12px;">{{data.tet1}}</p>
+            </ion-col>
+
+
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <button ion-button class="seeBtn" color="seeAllBtn" block>
+        <p ion-text color="dark" style="text-transform: none;font-size: medium;">See All Friends</p>
+      </button>
+    </ion-item>
+    <hr style="margin-top:2px;">
+    <ion-item>
+      <ion-grid style="margin-top:-13px;">
+        <ion-row>
+          <ion-col ><p ion-text color="dark" style="font-weight: bolder;font-size:large;">Posts</p></ion-col>
+         <ion-col col-6></ion-col>
+          <ion-col ></ion-col>
+        
+          <ion-col>
+            <p ion-text color="primary" style="font-size: medium;">Filters</p>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-item *ngIf="changedPP.length==0">
+        <ion-avatar item-start><img src="assets/imgs/profile.png"></ion-avatar>
+        <h2>What's on your mind?</h2>
+      </ion-item>
+
+      <ion-item *ngIf="changedPP.length>0">
+        <ion-avatar item-start *ngFor="let savephoto of changedPP" onError="this.src='assets/imgs/myday1.png'"><img
+            src="{{savephoto.img}}"></ion-avatar>
+        <h3>What's on your mind?</h3>
+      </ion-item>
+
+      <hr>
       <ion-row>
-      <ion-col *ngFor="let data of Datas1">
-        <img src="assets/imgs/{{data.imgs1}}" class="photos" style="border-radius: 10px;height: 110px;width: 100px;" imageViewer/>
-     
-    
-        <p style="text-align: left;font-size: 12px;">{{data.tet1}}</p>
-      </ion-col>
+        <ion-col no-padding>
+          <button style="max-height: 20px; text-transform: none;" ion-button full clear no-margin>
+            <ion-icon class="icon" color="liveIcon" name="create"></ion-icon>
+            &nbsp;
+            <span ion-text color="dark">Status</span>
+          </button>
+        </ion-col>
+        <div class="verticalLine"></div>
+        <ion-col no-padding>
+          <button style="max-height: 20px; text-transform: none;" ion-button full clear no-margin>
+            <ion-icon class="icon" color="photoIcon" name="ios-images"></ion-icon>
+            &nbsp;
+            <span ion-text color="dark">Photo</span>
+          </button>
+        </ion-col>
+        <div class="verticalLine"></div>
+        <ion-col no-padding>
+          <button style="max-height: 20px; text-transform: none;" ion-button full clear no-margin>
+            <ion-icon class="icon" color="checkinIcon" name="flag"></ion-icon>
+            &nbsp;
+            <span ion-text color="dark">Life Events</span>
+          </button>
+        </ion-col>
+      </ion-row>
+      <hr>
+      <!-- <button ion-button class="btn" style="background-color:#d9d9d9;font-size:medium;color:black;margin-top: 8px;"><ion-icon name="images"></ion-icon><span style="text-transform:none!important;">&nbsp;Manage Posts</span></button>   -->
+      <button ion-button class="seeBtn" color="seeAllBtn" block>
+        <p ion-text color="dark" style="text-transform: none;font-size: medium;">
+          <ion-icon name="images"></ion-icon>&nbsp;Manage Posts
+        </p>
+    </button>
+    </ion-item>
+  </ion-card>
 
-      
+
+  <ion-card>
+    <button ion-button class="photoBtn">
+      <ion-icon name="images">&nbsp;Photos</ion-icon>
+    </button>
+    <button ion-button class="photoBtn">
+      <ion-icon name="star">&nbsp;Life Events</ion-icon>
+    </button>
+    <ion-grid *ngIf="changedPP.length==0">
+      <ion-item>
+
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile.png">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-grid *ngIf="changedPP.length>0">
+      <ion-item *ngFor="let savephoto of changedPP">
+
+        <ion-avatar item-start>
+          <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-card style="border-color: black;margin-top: -10px;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/flower.jpeg">
+        </ion-avatar>
+        <h2 style="font-weight: bolder;margin-left:-2px;">Flower World</h2>
+        <p style="font-size:smaller;margin-left:-2px;">10 November at 6:00PM.</p>
+      </ion-item>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How beautiful it is!<br><br>
+      <img src="assets/imgs/flower.jpeg">
+
+
+    </ion-card>
+    <ion-row *ngFor="let item of items1">
+      <ion-icon style="padding-left: 10px; padding-bottom: 3px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+        <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
     </ion-row>
-  </ion-grid>
-</div>
-  
-  <!-- <button ion-button class="btn" style="background-color:#d9d9d9;font-size:medium;color:black;"><span style="text-transform:none!important;">See All Friends</span></button> -->
-  <button ion-button class="seeBtn" color="seeAllBtn" block>
-    <p ion-text color="dark" style="text-transform: none;font-size: medium;">See All Friends</p>
-  </button>
-</ion-item>
-<hr style="margin-top:2px;">
-<ion-item>
-  <ion-grid style="margin-top:-13px;">
-    <ion-row>
-      <ion-col col-9>
-        <h2 style="font-weight: bolder;">Posts</h2>
+    <hr>
+    <ion-row *ngFor="let item of items1">
+      <ion-col *ngIf="item.like" (click)="handleLike1(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 3px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
+        </button>
       </ion-col>
-     <!-- <ion-col col-6></ion-col>
-      <ion-col ></ion-col>     -->
-      <ion-col>
-        <h2 ion-text color="primary">Filters</h2>
-        </ion-col>
+      <ion-col *ngIf="!item.like" (click)="handleLike1(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 3px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
+        </button>
+      </ion-col>
+      <ion-col no-padding (click)="openModal()">
+        <button class="btnRow" ion-button full clear no-margin>
+          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
+          <!-- </ion-col> -->
+        </button>
+      </ion-col>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Share</span>
+        </button>
+      </ion-col>
     </ion-row>
-  </ion-grid>
-   <ion-item *ngIf="changedPP.length==0"> <ion-avatar item-start><img src="assets/imgs/profile.png"></ion-avatar>
-    <h3>What's on your mind?</h3></ion-item>
-
-    <ion-item *ngIf="changedPP.length>0"> <ion-avatar item-start *ngFor="let savephoto of changedPP" onError="this.src='assets/imgs/myday1.png'"><img src="{{savephoto.img}}"></ion-avatar>
-      <h3>What's on your mind?</h3></ion-item>
-
-   <ion-toolbar> 
-    <ion-segment>
-  
-      <ion-segment-button style="color:black;font-family:Arial;font-weight: bolder;"><ion-icon name="create" style="color:darkmagenta"></ion-icon><span style="text-transform:none!important;">Status</span></ion-segment-button>
-      <ion-segment-button style="color:black;font-family:Arial;font-weight: bolder;"><ion-icon name="photos" style="color:lawngreen"></ion-icon>&nbsp;<span style="text-transform:none!important;">Photo</span></ion-segment-button>
-      <ion-segment-button style="color:black;font-family:Arial;font-weight: bolder;"><ion-icon name="flag" style="color:darkmagenta;"></ion-icon>&nbsp;<span style="text-transform:none!important;">Life Event</span></ion-segment-button>
-    </ion-segment> 
-  </ion-toolbar>
-  <button ion-button class="btn" style="background-color:#d9d9d9;font-size:medium;color:black;margin-top: 8px;"><ion-icon name="images"></ion-icon><span style="text-transform:none!important;">&nbsp;Manage Posts</span></button>  
-</ion-item>
-</ion-card>
+  </ion-card>
 
 
-<ion-card >
-  <button ion-button class="photoBtn"><ion-icon name="images">&nbsp;Photos</ion-icon></button>
-  <ion-grid *ngIf="changedPP.length==0">
-    <ion-item>
+  <ion-card>
+    <ion-grid *ngIf="changedPP.length==0">
+      <ion-item>
 
-      <ion-avatar item-start>
-        <img src="assets/imgs/profile.png">
-      </ion-avatar>
-     <ion-row style="margin-left:-6px">
-      <ion-col col-8>
-        <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
-        </ion-col>
-        <ion-col>
-          
-        </ion-col><ion-col></ion-col>
-        <ion-col></ion-col>
-  <ion-col>
-    <button (click)="actionHome()" style="background-color: white;">
-      <ion-icon name="ios-more" style="color:black;"></ion-icon>
-    </button>
-  </ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-  <ion-col col-2>
-    <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-  </ion-col>
-  <ion-col>
-    <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-  </ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile.png">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
 
-<ion-grid *ngIf="changedPP.length>0">
-  <ion-item *ngFor="let savephoto of changedPP">
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
 
-    <ion-avatar item-start>
-      <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
-    </ion-avatar>
-   <ion-row style="margin-left:-6px">
-    <ion-col col-8>
-      <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+    <ion-grid *ngIf="changedPP.length>0">
+      <ion-item *ngFor="let savephoto of changedPP">
+
+        <ion-avatar item-start>
+          <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-card style="border-color: black;margin-top: -10px;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/flower.jpeg">
+        </ion-avatar>
+        <h2 style="font-weight: bolder;margin-left:-2px;">Happy Soul</h2>
+        <p style="font-size:smaller;margin-left:-2px;">28 November at 6:30PM.</p>
+      </ion-item><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">A beautiful
+        Scenery</p><br><br>
+      <img src="assets/imgs/scenery2.jpeg"><br>
+
+    </ion-card>
+    <ion-row *ngFor="let item of items2">
+      <ion-icon style="padding-left: 10px; padding-bottom: 3px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+        <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>
+    <hr>
+    <ion-row *ngFor="let item of items2">
+      <ion-col *ngIf="item.like" (click)="handleLike2(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 2px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
+        </button>
       </ion-col>
-      <ion-col>
-        
-      </ion-col><ion-col></ion-col>
-      <ion-col></ion-col>
-<ion-col>
-  <button (click)="actionHome()" style="background-color: white;">
-    <ion-icon name="ios-more" style="color:black;"></ion-icon>
-  </button>
-</ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-<ion-col col-2>
-  <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-</ion-col>
-<ion-col>
-  <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-</ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
-
-  <ion-card style="border-color: black;margin-top: -10px;">
-<ion-item>
-  <ion-avatar item-start>
-    <img src="assets/imgs/flower.jpeg">
-  </ion-avatar>
-  <h2 style="font-weight: bolder;margin-left:-2px;">Flower World</h2>
-  <p style="font-size:smaller;margin-left:-2px;">10 November at 6:00PM.</p>
-</ion-item>
-
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How beautiful it is!<br><br>
- <img src="assets/imgs/flower.jpeg">
- 
-
-</ion-card>
-<ion-row *ngFor="let item of items1">
-  <ion-icon style="padding: 3px 0px 5px 10px;" *ngIf="item.like"
-    name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-</ion-row>
-<hr>
-<ion-row *ngFor="let item of items1">
-  <ion-col *ngIf="item.like" (click)="handleLike1(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-        color="primary">Unlike</span>
-    </button>
-  </ion-col>
-  <ion-col *ngIf="!item.like" (click)="handleLike1(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Like</span>
-    </button>
-  </ion-col>
-  <ion-col no-padding (click)="openModal()">
-    <button class="btnRow" ion-button full clear no-margin>
-      <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-      <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Comment</span>
-      <!-- </ion-col> -->
-    </button>
-  </ion-col>
-  <ion-col no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Share</span>
-    </button>
-  </ion-col>
-</ion-row>
-</ion-card>
-
-
-<ion-card >
-  <ion-grid *ngIf="changedPP.length==0">
-    <ion-item>
-
-      <ion-avatar item-start>
-        <img src="assets/imgs/profile.png">
-      </ion-avatar>
-     <ion-row style="margin-left:-6px">
-      <ion-col col-8>
-        <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
-        </ion-col>
-        <ion-col>
-          
-        </ion-col><ion-col></ion-col>
-        <ion-col></ion-col>
-  <ion-col>
-    <button (click)="actionHome()" style="background-color: white;">
-      <ion-icon name="ios-more" style="color:black;"></ion-icon>
-    </button>
-  </ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-  <ion-col col-2>
-    <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-  </ion-col>
-  <ion-col>
-    <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-  </ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
-
-<ion-grid *ngIf="changedPP.length>0">
-  <ion-item *ngFor="let savephoto of changedPP">
-
-    <ion-avatar item-start>
-      <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
-    </ion-avatar>
-   <ion-row style="margin-left:-6px">
-    <ion-col col-8>
-      <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+      <ion-col *ngIf="!item.like" (click)="handleLike2(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 2px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
+        </button>
       </ion-col>
-      <ion-col>
-        
-      </ion-col><ion-col></ion-col>
-      <ion-col></ion-col>
-<ion-col>
-  <button (click)="actionHome()" style="background-color: white;">
-    <ion-icon name="ios-more" style="color:black;"></ion-icon>
-  </button>
-</ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-<ion-col col-2>
-  <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-</ion-col>
-<ion-col>
-  <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-</ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
-
-  <ion-card style="border-color: black;margin-top: -10px;">
-<ion-item>
-  <ion-avatar item-start>
-    <img src="assets/imgs/flower.jpeg">
-  </ion-avatar>
-  <h2 style="font-weight: bolder;margin-left:-2px;">Happy Soul</h2>
-  <p style="font-size:smaller;margin-left:-2px;">28 November at 6:30PM.</p>
-</ion-item><br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">A beautiful Scenery</p><br><br>
- <img src="assets/imgs/scenery2.jpeg"><br>
-
-</ion-card>
-<ion-row *ngFor="let item of items2">
-  <ion-icon style="padding: 3px 0px 5px 10px;" *ngIf="item.like"
-    name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-</ion-row>
-<hr>
-<ion-row *ngFor="let item of items2">
-  <ion-col *ngIf="item.like" (click)="handleLike2(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-        color="primary">Unlike</span>
-    </button>
-  </ion-col>
-  <ion-col *ngIf="!item.like" (click)="handleLike2(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Like</span>
-    </button>
-  </ion-col>
-  <ion-col no-padding (click)="openModal()">
-    <button class="btnRow" ion-button full clear no-margin>
-      <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-      <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Comment</span>
-      <!-- </ion-col> -->
-    </button>
-  </ion-col>
-  <ion-col no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Share</span>
-    </button>
-  </ion-col>
-</ion-row>
-
-</ion-card>
-
-
-<ion-card >
-  <ion-grid *ngIf="changedPP.length==0">
-    <ion-item>
-
-      <ion-avatar item-start>
-        <img src="assets/imgs/profile.png">
-      </ion-avatar>
-     <ion-row style="margin-left:-6px">
-      <ion-col col-8>
-        <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
-        </ion-col>
-        <ion-col>
-          
-        </ion-col><ion-col></ion-col>
-        <ion-col></ion-col>
-  <ion-col>
-    <button (click)="actionHome()" style="background-color: white;">
-      <ion-icon name="ios-more" style="color:black;"></ion-icon>
-    </button>
-  </ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-  <ion-col col-2>
-    <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-  </ion-col>
-  <ion-col>
-    <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-  </ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
-
-<ion-grid *ngIf="changedPP.length>0">
-  <ion-item *ngFor="let savephoto of changedPP">
-
-    <ion-avatar item-start>
-      <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
-    </ion-avatar>
-   <ion-row style="margin-left:-6px">
-    <ion-col col-8>
-      <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+      <ion-col no-padding (click)="openModal()">
+        <button class="btnRow" ion-button full clear no-margin>
+          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
+          <!-- </ion-col> -->
+        </button>
       </ion-col>
-      <ion-col>
-        
-      </ion-col><ion-col></ion-col>
-      <ion-col></ion-col>
-<ion-col>
-  <button (click)="actionHome()" style="background-color: white;">
-    <ion-icon name="ios-more" style="color:black;"></ion-icon>
-  </button>
-</ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-<ion-col col-2>
-  <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-</ion-col>
-<ion-col>
-  <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-</ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
-
-  <ion-card style="border-color: black;margin-top: -10px;">
-<ion-item>
-  <ion-avatar item-start>
-    <img src="assets/imgs/flower.jpeg">
-  </ion-avatar>
-  <h2 style="font-weight: bolder;margin-left:-2px;">Happy Soul</h2>
-  <p style="font-size:smaller;margin-left:-2px;"> 30 November at 7:30PM.</p>
-</ion-item><br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">I am feeling good....</p><br><br>
- <img src="assets/imgs/scenery1.jpeg"><br>
- 
-</ion-card>
-<ion-row *ngFor="let item of items3">
-  <ion-icon style="padding: 3px 0px 5px 10px;" *ngIf="item.like"
-    name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-</ion-row>
-<hr>
-<ion-row *ngFor="let item of items3">
-  <ion-col *ngIf="item.like" (click)="handleLike3(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-        color="primary">Unlike</span>
-    </button>
-  </ion-col>
-  <ion-col *ngIf="!item.like" (click)="handleLike3(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Like</span>
-    </button>
-  </ion-col>
-  <ion-col no-padding (click)="openModal()">
-    <button class="btnRow" ion-button full clear no-margin>
-      <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-      <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Comment</span>
-      <!-- </ion-col> -->
-    </button>
-  </ion-col>
-  <ion-col no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Share</span>
-    </button>
-  </ion-col>
-</ion-row>
-</ion-card>
-
-
-<ion-card >
-  <ion-grid *ngIf="changedPP.length==0">
-    <ion-item>
-
-      <ion-avatar item-start>
-        <img src="assets/imgs/profile.png">
-      </ion-avatar>
-     <ion-row style="margin-left:-6px">
-      <ion-col col-8>
-        <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
-        </ion-col>
-        <ion-col>
-          
-        </ion-col><ion-col></ion-col>
-        <ion-col></ion-col>
-  <ion-col>
-    <button (click)="actionHome()" style="background-color: white;">
-      <ion-icon name="ios-more" style="color:black;"></ion-icon>
-    </button>
-  </ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-  <ion-col col-2>
-    <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-  </ion-col>
-  <ion-col>
-    <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-  </ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
-
-<ion-grid *ngIf="changedPP.length>0">
-  <ion-item *ngFor="let savephoto of changedPP">
-
-    <ion-avatar item-start>
-      <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
-    </ion-avatar>
-   <ion-row style="margin-left:-6px">
-    <ion-col col-8>
-      <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Share</span>
+        </button>
       </ion-col>
-      <ion-col>
-        
-      </ion-col><ion-col></ion-col>
-      <ion-col></ion-col>
-<ion-col>
-  <button (click)="actionHome()" style="background-color: white;">
-    <ion-icon name="ios-more" style="color:black;"></ion-icon>
-  </button>
-</ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-<ion-col col-2>
-  <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-</ion-col>
-<ion-col>
-  <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-</ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
+    </ion-row>
 
-  <ion-card style="border-color: black;margin-top: -10px;">
-<ion-item>
-  <ion-avatar item-start>
-    <img src="assets/imgs/flower.jpeg">
-  </ion-avatar>
-  <h2 style="font-weight: bolder;margin-left:-2px;">Happy Soul</h2>
-  <p style="font-size:smaller;margin-left:-2px;">1 January at 6:45PM.</p>
-</ion-item><br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">Have a nice day!</p><br><br>
- <img src="assets/imgs/flower.jpeg"><br>
+  </ion-card>
 
 
-</ion-card>
-<ion-row *ngFor="let item of items4">
-  <ion-icon style="padding: 3px 0px 5px 10px;" *ngIf="item.like"
-    name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-</ion-row>
-<hr>
-<ion-row *ngFor="let item of items4">
-  <ion-col *ngIf="item.like" (click)="handleLike4(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-        color="primary">Unlike</span>
-    </button>
-  </ion-col>
-  <ion-col *ngIf="!item.like" (click)="handleLike4(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Like</span>
-    </button>
-  </ion-col>
-  <ion-col no-padding (click)="openModal()">
-    <button class="btnRow" ion-button full clear no-margin>
-      <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-      <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Comment</span>
-      <!-- </ion-col> -->
-    </button>
-  </ion-col>
-  <ion-col no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Share</span>
-    </button>
-  </ion-col>
-</ion-row>
-</ion-card>
+  <ion-card>
+    <ion-grid *ngIf="changedPP.length==0">
+      <ion-item>
 
-<ion-card style="border-color: black;">
-  <ion-grid *ngIf="changedPP.length==0">
-    <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile.png">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
 
-      <ion-avatar item-start>
-        <img src="assets/imgs/profile.png">
-      </ion-avatar>
-     <ion-row style="margin-left:-6px">
-      <ion-col col-8>
-        <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
-        </ion-col>
-        <ion-col>
-          
-        </ion-col><ion-col></ion-col>
-        <ion-col></ion-col>
-  <ion-col>
-    <button (click)="actionHome()" style="background-color: white;">
-      <ion-icon name="ios-more" style="color:black;"></ion-icon>
-    </button>
-  </ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-  <ion-col col-2>
-    <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-  </ion-col>
-  <ion-col>
-    <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-  </ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
 
-<ion-grid *ngIf="changedPP.length>0">
-  <ion-item *ngFor="let savephoto of changedPP">
+    <ion-grid *ngIf="changedPP.length>0">
+      <ion-item *ngFor="let savephoto of changedPP">
 
-    <ion-avatar item-start>
-      <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
-    </ion-avatar>
-   <ion-row style="margin-left:-6px">
-    <ion-col col-8>
-      <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+        <ion-avatar item-start>
+          <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-card style="border-color: black;margin-top: -10px;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/flower.jpeg">
+        </ion-avatar>
+        <h2 style="font-weight: bolder;margin-left:-2px;">Happy Soul</h2>
+        <p style="font-size:smaller;margin-left:-2px;"> 30 November at 7:30PM.</p>
+      </ion-item><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">I am feeling
+        good....</p><br><br>
+      <img src="assets/imgs/scenery1.jpeg"><br>
+
+    </ion-card>
+    <ion-row *ngFor="let item of items3">
+      <ion-icon style="padding-left: 10px; padding-bottom: 3px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+        <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>
+    <hr>
+    <ion-row *ngFor="let item of items3">
+      <ion-col *ngIf="item.like" (click)="handleLike3(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 3px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
+        </button>
       </ion-col>
-      <ion-col>
-        
-      </ion-col><ion-col></ion-col>
-      <ion-col></ion-col>
-<ion-col>
-  <button (click)="actionHome()" style="background-color: white;">
-    <ion-icon name="ios-more" style="color:black;"></ion-icon>
-  </button>
-</ion-col>
-</ion-row >
-<ion-row style="margin-top: -10px;margin-left:-6px;">
-<ion-col col-2>
-  <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
-</ion-col>
-<ion-col>
-  <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
-</ion-col>
-</ion-row>
-</ion-item>
-</ion-grid>
+      <ion-col *ngIf="!item.like" (click)="handleLike3(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 3px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
+        </button>
+      </ion-col>
+      <ion-col no-padding (click)="openModal()">
+        <button class="btnRow" ion-button full clear no-margin>
+          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
+          <!-- </ion-col> -->
+        </button>
+      </ion-col>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Share</span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 
-  <ion-card style="border-color: black;margin-top: -10px;">
-<ion-item>
-  <ion-avatar item-start>
-    <img src="assets/imgs/flower.jpeg">
-  </ion-avatar>
-  <h2 style="font-weight: bolder;margin-left:-2px;">Flower World</h2>
-  <p style="font-size:smaller;margin-left:-2px;">1 October at 2:30PM.</p>
-</ion-item><br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">Roses are red...</p><br><br>
- <img src="assets/imgs/images.jpeg"><br>
- 
-</ion-card>
-<ion-row *ngFor="let item of items5">
-  <ion-icon style="padding: 3px 0px 5px 10px;" *ngIf="item.like"
-    name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
-</ion-row>
-<hr>
-<ion-row *ngFor="let item of items5">
-  <ion-col *ngIf="item.like" (click)="handleLike5(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
-        color="primary">Unlike</span>
-    </button>
-  </ion-col>
-  <ion-col *ngIf="!item.like" (click)="handleLike5(item)" no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon style="padding-bottom: 9px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Like</span>
-    </button>
-  </ion-col>
-  <ion-col no-padding (click)="openModal()">
-    <button class="btnRow" ion-button full clear no-margin>
-      <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
-      <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Comment</span>
-      <!-- </ion-col> -->
-    </button>
-  </ion-col>
-  <ion-col no-padding>
-    <button class="btnRow" ion-button full clear no-margin>
-      <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
-        color="darkgrey">Share</span>
-    </button>
-  </ion-col>
-</ion-row>
 
-</ion-card>
+  <ion-card>
+    <ion-grid *ngIf="changedPP.length==0">
+      <ion-item>
+
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile.png">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-grid *ngIf="changedPP.length>0">
+      <ion-item *ngFor="let savephoto of changedPP">
+
+        <ion-avatar item-start>
+          <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-card style="border-color: black;margin-top: -10px;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/flower.jpeg">
+        </ion-avatar>
+        <h2 style="font-weight: bolder;margin-left:-2px;">Happy Soul</h2>
+        <p style="font-size:smaller;margin-left:-2px;">1 January at 6:45PM.</p>
+      </ion-item><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">Have a nice day!
+      </p><br><br>
+      <img src="assets/imgs/flower.jpeg"><br>
+
+
+    </ion-card>
+    <ion-row *ngFor="let item of items4">
+      <ion-icon style="padding-left: 10px; padding-bottom: 3px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+        <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>
+    <hr>
+    <ion-row *ngFor="let item of items4">
+      <ion-col *ngIf="item.like" (click)="handleLike4(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
+        </button>
+      </ion-col>
+      <ion-col *ngIf="!item.like" (click)="handleLike4(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
+        </button>
+      </ion-col>
+      <ion-col no-padding (click)="openModal()">
+        <button class="btnRow" ion-button full clear no-margin>
+          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
+          <!-- </ion-col> -->
+        </button>
+      </ion-col>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Share</span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card style="border-color: black;">
+    <ion-grid *ngIf="changedPP.length==0">
+      <ion-item>
+
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile.png">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-grid *ngIf="changedPP.length>0">
+      <ion-item *ngFor="let savephoto of changedPP">
+
+        <ion-avatar item-start>
+          <img src="{{savephoto.img}}" onError="this.src='assets/imgs/profile.png'">
+        </ion-avatar>
+        <ion-row style="margin-left:-6px">
+          <ion-col col-8>
+            <h2 style="color: black;font-weight: bolder;">Saw Waddy </h2>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button (click)="actionHome()" style="background-color: white;">
+              <ion-icon name="ios-more" style="color:black;"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -10px;margin-left:-6px;">
+          <ion-col col-2>
+            <h6 style="color: darkgrey;font-size:smaller;">2 min .</h6>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="md-globe" style="margin-top: -5px;zoom:0.7;color: grey;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+
+    <ion-card style="border-color: black;margin-top: -10px;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/flower.jpeg">
+        </ion-avatar>
+        <h2 style="font-weight: bolder;margin-left:-2px;">Flower World</h2>
+        <p style="font-size:smaller;margin-left:-2px;">1 October at 2:30PM.</p>
+      </ion-item><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-35px;margin-left:15px;margin-bottom:-15px;">Roses are red...
+      </p><br><br>
+      <img src="assets/imgs/images.jpeg"><br>
+
+    </ion-card>
+    <ion-row *ngFor="let item of items5">
+      <ion-icon style="padding-left: 10px; padding-bottom: 3px;" *ngIf="item.like" name="md-thumbs-up" color="primary">
+        <span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+    </ion-row>
+    <hr>
+    <ion-row *ngFor="let item of items5">
+      <ion-col *ngIf="item.like" (click)="handleLike5(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="primary"></ion-icon><span ion-text
+            color="primary">&nbsp;Unlike</span>
+        </button>
+      </ion-col>
+      <ion-col *ngIf="!item.like" (click)="handleLike5(item)" no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon style="padding-bottom: 5px;" name="md-thumbs-up" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Like</span>
+        </button>
+      </ion-col>
+      <ion-col no-padding (click)="openModal()">
+        <button class="btnRow" ion-button full clear no-margin>
+          <!-- <ion-col style="max-height: 20px;" text-center (click)="openModal()"> -->
+          <ion-icon name="ios-text-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Comment</span>
+          <!-- </ion-col> -->
+        </button>
+      </ion-col>
+      <ion-col no-padding>
+        <button class="btnRow" ion-button full clear no-margin>
+          <ion-icon name="ios-redo-outline" color="darkgrey"></ion-icon><span ion-text
+            color="darkgrey">&nbsp;Share</span>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 
 
 </ion-content>

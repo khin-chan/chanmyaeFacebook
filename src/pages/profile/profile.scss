@@ -3,7 +3,9 @@ page-profile {
       width:195%;
       float:left;
       border-radius:7px;
-      margin-left: -9px;          
+      margin-left: -9px;
+      
+      
 
    }
    
@@ -14,23 +16,22 @@ page-profile {
        background-color: #d9d9d9;
        border-radius:7px;
        margin-right:-10px;
+       color: black;
    }
   // .details{
   //     border-radius:7px;
   //     background-color:  #ffb3b3;}
 
   .container {
-       position:relative;       
+       position:relative;
+       
        
      }
      
       Bottom right text 
      .text-block {
       font-weight:bolder;
-       text-align:left;
-      // position: absolute;
-     // bottom: 5px;
-     // right: 20px;
+       text-align:left;      
        background-color: white;
        color: white;
       padding-left: 10px;
@@ -76,22 +77,30 @@ page-profile {
      background-color: #d9d9d9;
      color:black;
    }
-   .editBtn{
+   .btn{
      width:99%;
-     height:34px !important;
-     margin-top:20px;    
-     margin-bottom: 12px;
-     border-radius: 5px;     
-         
+     height:36px !important;
+     margin-top:20px;
+     
+     
+     border-radius: 7px;
    }
-   .seeBtn{
+   .editBtn{
     width:99%;
     height:34px !important;
-    margin-top:20px;  
+    margin-top:20px;    
     margin-bottom: 12px;
-    border-radius: 5px;    
+    border-radius: 5px;     
         
   }
+  .seeBtn{
+   width:99%;
+   height:34px !important;
+   margin-top:20px;  
+   margin-bottom: 12px;
+   border-radius: 5px;    
+       
+ }
    .resize {
     height: 100px;
     /* width: 100%; */
@@ -100,15 +109,10 @@ page-profile {
     vertical-align: middle;
     border-radius: 50px;
   }
-  .btnRow{
-    max-height: 30px;           
-    padding-bottom: 9px;
-    text-transform: none;
-  }
-  .icon{
-    //margin-right:0.5em;
-    padding: 5px;
-    align-items: center;
-}
-
+  .verticalLine {
+    width:1px;
+    height:25px;           
+    background:rgb(212, 209, 209);           
+  }  
+   
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SaveProfilePage } from '../save-profile/save-profile';
 import { SQLite,SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the ShowUploadImgPage page.
@@ -54,4 +55,8 @@ export class ShowUploadImgPage {
 
 
     // })}
-      }}
+      }
+      backtoProfile(){
+        this.navCtrl.push(ProfilePage)
+      }
+    }

@@ -17,7 +17,8 @@ import { SaveProfilePage } from '../pages/save-profile/save-profile';
 import { CommentPage } from '../pages/comment/comment';
 import { SaveCpPage } from '../pages/save-cp/save-cp';
 import { ShowUploadImgPage } from '../pages/show-upload-img/show-upload-img';
-
+import { ViewcoverPage } from '../pages/viewcover/viewcover';
+import { ViewphotoPage } from '../pages/viewphoto/viewphoto';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WatchListPage } from '../pages/watch-list/watch-list';
@@ -53,6 +54,8 @@ import { Toast } from '@ionic-native/toast';
     CommentPage,
     SaveCpPage,
     ShowUploadImgPage,
+    ViewcoverPage,
+    ViewphotoPage,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,8 @@ import { Toast } from '@ionic-native/toast';
     CommentPage,
     SaveCpPage,
     ShowUploadImgPage,
+    ViewcoverPage,
+    ViewphotoPage,
   ],
   providers: [
     StatusBar,

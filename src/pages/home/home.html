@@ -70,7 +70,7 @@
   <ion-card class="cardMarginTop" *ngIf="checkImg==false">
     <ion-grid class="avatarRow">
       <ion-item>
-        <ion-avatar  item-start>
+        <ion-avatar item-start>
           <img class="myborder" src="assets/imgs/profile.png">
         </ion-avatar>
         <ion-row>
@@ -95,7 +95,7 @@
     <ion-card-content style="margin: -21px 0px -5px -5px;">
       Hello, I am glad to meet you. You are the best for me.This is card 1.     
       <ion-row *ngFor="let item of items1">
-        <ion-icon *ngIf="item.like" style="margin-left: -5px;" name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
+        <ion-icon *ngIf="item.like" style="margin-left: -5px; margin-bottom: -10px;" name="md-thumbs-up" color="primary"><span ion-text color="darkgrey">&nbsp;1</span></ion-icon>
       </ion-row>
     </ion-card-content>
 
